@@ -1,0 +1,8 @@
+applications:
+- name: cope_server
+  memory: 512M
+  instances: 1
+  host: cope_server_Sandbox
+  command: node server.js
+  services:
+    - Mbe_logdrain
