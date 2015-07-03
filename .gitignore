@@ -5,3 +5,13 @@ node_modules/
 platforms/
 plugins/
 .DS_Store
+
+www/lib/ionic/scss/_reset.scss
+
+*.scss
+
+www/lib/ionic/scss/_reset.scss
+
+www/lib/ionic/scss/ionicons/_ionicons-font.scss
+
+www/lib/ionic/scss/ionicons/_ionicons-icons.scss

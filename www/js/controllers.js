@@ -10,6 +10,32 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+        $scope.washTasks = [{
+                img: 'img/health/washing/how_to/tap.png',
+                audio: 'audio/tap.m4a'
+            },
+            {
+                img: 'img/health/washing/how_to/wet.png',
+                audio: 'audio/tap.m4a'
+            },
+            {
+                img: 'img/health/washing/how_to/soap.png',
+                audio: 'audio/tap.m4a'
+            },
+            {
+                img: 'img/health/washing/how_to/rub.png',
+                audio: 'audio/tap.m4a'
+            },
+            {
+                img: 'img/health/washing/how_to/rinse.png',
+                audio: 'audio/tap.m4a'
+            },
+            {
+                img: 'img/health/washing/how_to/dry.png',
+                audio: 'audio/tap.m4a'
+            }];
+
   
 })
 

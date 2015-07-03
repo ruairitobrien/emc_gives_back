@@ -55,7 +55,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('health-washing-how-to', {
       url: '/health/washing/how-to',
-      templateUrl: 'templates/health-washing-how-to.html'
+      templateUrl: 'templates/health-washing-how-to.html',
+      controller: 'HealthCtrl'
   })
       .state('health-mybody-how-to', {
           url: '/health/mybody/how-to',
