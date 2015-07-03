@@ -1,6 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, categoriesPromise) {
+
+        $scope.categories = categoriesPromise.data;
+
+    })
 
 .controller('HealthCtrl', function($scope,Tasks) {
   // With the new view caching in Ionic, Controllers are only called
@@ -11,11 +15,29 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+
         $scope.washTasks =Tasks.washTasks();
 
         $scope.trackAudio = function(audio) {
             audio.cls = 'task-clicked';
         };
+    })
 
-  
+.controller('CategoryCtrl', function($scope) {
+
+
+    $scope.insert = function(parentId, title, image, audio) {
+        var newRecord = {
+            parentId: parentId,
+            title: title,
+            image: image,
+            audio: audio
+        };
+
+        $scope.categories.push(newRecord);
+
+    };
+
 });
+
+
