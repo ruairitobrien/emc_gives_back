@@ -1,3 +1,4 @@
+//Task Branch
 // Ionic Starter App
 
 
@@ -55,6 +56,11 @@ angular.module('starter', ['ionic', 'templates', 'starter.controllers', 'starter
       url: '/health/washing',
       templateUrl: 'templates/health-washing.html'
   })
+
+  .state('health-mybody', {
+          url: '/health/mybody',
+          templateUrl: 'templates/health-mybody.html'
+      })
 
   .state('health-washing-how-to', {
       url: '/health/washing/how-to',
