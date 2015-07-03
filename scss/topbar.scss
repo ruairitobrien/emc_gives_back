@@ -1,12 +1,14 @@
-.top-bar img {
-  height: 125px;
-  width: 164px;
-}
-
-.top-bar .nav {
-  float: left;
-}
-
-.top-bar .options {
-  float: right;
+.top-bar {
+	img {
+	  margin-left: 50px;
+  	  height: 90px;
+  	  width: 104px;
+	}
+	.nav {
+      float: left;
+    }
+    .options {
+      margin-left: 50px;
+  	  float: right;
+	}
 }
