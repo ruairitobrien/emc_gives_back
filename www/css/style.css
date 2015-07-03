@@ -11,7 +11,6 @@ ion-content {
 }
 
 .cope-tile {
-    display: inline-block;
     border: solid black 5px;
     background-color: white;
 }
