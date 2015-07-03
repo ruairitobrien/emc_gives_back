@@ -13,27 +13,27 @@ angular.module('starter.controllers', [])
 
         $scope.washTasks = [{
                 img: 'img/health/washing/how_to/tap.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/TurnTap.mp3'
             },
             {
                 img: 'img/health/washing/how_to/wet.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/WetHands.mp3'
             },
             {
                 img: 'img/health/washing/how_to/soap.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/GetSoap.mp3'
             },
             {
                 img: 'img/health/washing/how_to/rub.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/RubHands.mp3'
             },
             {
                 img: 'img/health/washing/how_to/rinse.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/RinseHands.mp3'
             },
             {
                 img: 'img/health/washing/how_to/dry.png',
-                audio: 'audio/health/washing/how_to/tap.m4a'
+                audio: 'audio/health/washing/how_to/DryHands.mp3'
             }];
 
   
