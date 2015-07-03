@@ -18,6 +18,8 @@
 	topbarCtrl.$inject = ['$scope', '$ionicModal', 'settings'];
 
     function topbarCtrl($scope, $ionicModal, settings){
+    	this.settings = settings;
+
  		$ionicModal.fromTemplateUrl('topbar/topbar.colorPicker.html', {
 			scope: $scope,
 		    animation: 'slide-in-up'
@@ -42,6 +44,12 @@
 
 		this.colourPicker = function(){
 			$scope.modal.show();
+		}
+
+
+		this.mute = function () {
+			settings.mute = = !settings.mute;
+
 		}
     }
 })();
