@@ -1,7 +1,15 @@
 angular.module('starter.controllers', ['starter.settings'])
 
-    .controller('MainCtrl', function ($scope, settings) {
+    .controller('MainCtrl', function ($scope, $rootScope, settings) {
         $scope.colour = settings.colour;
+
+        $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl){
+            if(settings.locked) {
+                event.preventDefault();
+                $location.path(oldUrl);
+            }
+        });
+
     })
     .controller('DashCtrl', function ($scope) {
     })
