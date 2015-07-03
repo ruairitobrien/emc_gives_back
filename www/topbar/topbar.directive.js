@@ -2,10 +2,9 @@
     'use strict';
     angular.module('starter.topbar', ['ionic'])
     	.directive('topBar', topBar)
-    	.controller('TopbarCtrl', ['$scope', '$ionicModal', topbarCtrl]);
+    	.controller('TopbarCtrl', topbarCtrl);
 
-
-    topBar.$inject = ['$ionicModal'];
+    topBar.$inject = [];
 
     function topBar() {
     	return {
@@ -15,6 +14,8 @@
     		'controllerAs': 'topbarCtrl'
     	}
     }
+
+topbarCtrl.$inject = ['$scope', '$ionicModal'];
 
     function topbarCtrl($scope, $ionicModal){
     	this.changeColour = function(){

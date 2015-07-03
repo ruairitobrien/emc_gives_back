@@ -6,6 +6,8 @@ platforms/
 plugins/
 .DS_Store
 
+www/js/templates.js
+
 
 
 ### JetBrains template
