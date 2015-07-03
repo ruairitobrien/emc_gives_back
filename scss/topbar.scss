@@ -1,12 +1,20 @@
-.top-bar img {
-  height: 125px;
-  width: 164px;
-}
+.top-bar {
+	img {
+	  margin-left: 50px;
+  	  height: 90px;
+  	  width: 104px;
+	}
+	.nav {
+      float: left;
+    }
+    .options {
+      margin-left: 50px;
+  	  float: right;
+	}
 
-.top-bar .nav {
-  float: left;
+.colour-picker .colour {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
 }
-
-.top-bar .options {
-  float: right;
 }
