@@ -1,7 +1,6 @@
 /* Empty. Add your own CSS if you like */
 
 ion-content {
-    background-color: #fad2ab;
     text-align: center;
     padding: 1em;
 }
@@ -73,4 +72,6 @@ ion-content {
 }
 
 
-
+.default-colour {
+    background-color: #fad2ab;
+}

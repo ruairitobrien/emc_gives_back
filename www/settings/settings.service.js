@@ -6,7 +6,7 @@
 
     function settings() {
         return {
-            colour: '#fad2ab',
+            colour: 'default-colour',
             locked: false,
             mute: false
         }
