@@ -8,13 +8,18 @@
       float: left;
     }
     .options {
+    	.unmute {
+    		background-color: #fad2ab;
+    	}
+    	.mute {
+    		display: none;
+    	}
       margin-left: 50px;
   	  float: right;
 	}
-
+}
 .colour-picker .colour {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
-}
 }
