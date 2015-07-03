@@ -7,7 +7,7 @@
     function settings() {
         return {
             colour: 'default-colour',
-            locked: true,
+            locked: false,
             mute: false
         }
 

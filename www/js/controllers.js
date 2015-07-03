@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['starter.settings'])
 
-    .controller('MainCtrl', function ($scope, $rootScope, settings) {
+    .controller('MainCtrl', function ($scope, $location, $rootScope, settings) {
         $scope.colour = settings.colour;
 
         $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl){
