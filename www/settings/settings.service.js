@@ -2,14 +2,13 @@
     'use strict';
 
     angular.module('starter.settings')
-        .factory('settings', settings);
+        .service('settings', settings);
 
     function settings() {
-        return {
-            colour: 'default-colour',
-            locked: false,
-            mute: false
-        }
+        this.colour = 'default-colour';
+        this.locked = false;
+        this.mute = false;
+        return this;
 
     }
 
