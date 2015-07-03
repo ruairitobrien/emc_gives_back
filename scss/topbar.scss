@@ -1,16 +1,23 @@
-.top-bar img {
-  height: 125px;
-  width: 164px;
+.top-bar {
+	img {
+	  margin-left: 50px;
+  	  height: 90px;
+  	  width: 104px;
+	}
+	.nav {
+      float: left;
+    }
+    .options {
+    	.unmute {
+    		background-color: #fad2ab;
+    	}
+    	.mute {
+    		display: none;
+    	}
+      margin-left: 50px;
+  	  float: right;
+	}
 }
-
-.top-bar .nav {
-  float: left;
-}
-
-.top-bar .options {
-  float: right;
-}
-
 .colour-picker .colour {
 	width: 100px;
 	height: 100px;
