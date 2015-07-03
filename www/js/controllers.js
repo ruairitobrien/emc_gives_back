@@ -13,5 +13,9 @@ angular.module('starter.controllers', [])
 
         $scope.washTasks =Tasks.washTasks();
 
+        $scope.trackAudio = function(audio) {
+            audio.cls = 'task-clicked';
+        };
+
   
 });
