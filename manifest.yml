@@ -1,6 +1,6 @@
 applications:
-- name: cope1
+- name: cope-tasks
   memory: 512M
   instances: 1
-  host: cope1
+  host: cope-tasks
   command: node server.js
