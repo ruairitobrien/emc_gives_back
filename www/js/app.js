@@ -1,5 +1,7 @@
 // Ionic Starter App
 
+
+var db = null;
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -18,6 +20,7 @@ angular.module('starter', ['ionic', 'templates', 'starter.controllers', 'starter
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
+
   });
 })
 
@@ -29,12 +32,18 @@ angular.module('starter', ['ionic', 'templates', 'starter.controllers', 'starter
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // Each tab has its own nav history stack:
+  // Each tab has its own nav history stack:§
 
   .state('dash', {
     url: '/dash',
     templateUrl: 'templates/dash.html',
-    controller: 'DashCtrl'
+    controller: 'DashCtrl',
+    resolve: {
+        categoriesPromise: function ($http) {
+            // $http returns a promise for the url data
+            return $http({method: 'GET', url: '/data/categories.json'});
+        },
+    }
   })
 
   .state('health', {
@@ -50,6 +59,13 @@ angular.module('starter', ['ionic', 'templates', 'starter.controllers', 'starter
   .state('health-washing-how-to', {
       url: '/health/washing/how-to',
       templateUrl: 'templates/health-washing-how-to.html'
+  })
+
+  .state('newcategory', {
+      url: '/newcategory',
+      templateUrl: 'templates/create-new-category.html',
+      controller: 'CategoryCtrl'
+
   });
 
   // if none of the above states are matched, use this as the fallback
