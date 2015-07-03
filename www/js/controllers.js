@@ -3,7 +3,7 @@ angular.module('starter.controllers', ['starter.settings'])
     .controller('MainCtrl', function ($scope, $location, $rootScope, settings) {
         $scope.colour = settings.colour;
 
-        $scope.$watch('settings.colour', function() {
+        $scope.$watch('settings', function() {
             $scope.colour = settings.colour;
         });
 
