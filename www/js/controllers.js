@@ -3,6 +3,10 @@ angular.module('starter.controllers', ['starter.settings'])
     .controller('MainCtrl', function ($scope, $location, $rootScope, settings) {
         $scope.colour = settings.colour;
 
+        $scope.$watch('settings.colour', function() {
+            $scope.colour = settings.colour;
+        });
+
         $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl){
             if(settings.locked) {
                 event.preventDefault();
