@@ -14,5 +14,4 @@ angular.module('starter.controllers', [])
         $scope.washTasks =Tasks.washTasks();
 
   
-})
-
+});
