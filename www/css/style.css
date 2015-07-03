@@ -10,7 +10,6 @@ ion-content {
 }
 
 .cope-tile {
-    display: inline-block;
     border: solid #404040 5px;
     border-radius: 5px;
     background-color: white;

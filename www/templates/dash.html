@@ -1,25 +1,32 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <div>
-      <a href="#/newcategory" class="">
+
+    <top-bar></top-bar>
+
+    <div ng-click="this.querySelector('audio').play()" class="cope-tile tile-3">
+      <a href="#/newcategory">
         <img src="img/add-category.ico"/>
       </a>
       <h1>Add New Category</h1>
-
+      <audio preload>
+        <source src="/media/CreatePersonalPage.mp3" />
+      </audio>
     </div>
-    <br>
 
-    <div ng-repeat="cat in categories | filter : {parentId: 0}">
+    <div ng-repeat="cat in categories | filter : {parentId: 0}" class="cope-tile tile-3">
 
-      <div>
+      <div onclick="this.querySelector('audio').play()">
         <a href="#/category/{{cat.categoryId}}" class="">
           <img ng-src="{{cat.image}}"/>
         </a>
         <h1>{{cat.title}}</h1>
+        <audio preload>
+          <source src="/media/PersonalSkills.mp3" />
+        </audio>
       </div>
 
     </div>
-
+    
     <a href="#/social" class="cope-tile tile-3">
       <img src="img/social.png"/>
     </a>
