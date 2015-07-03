@@ -48,8 +48,7 @@
 
 
 		this.mute = function () {
-			settings.mute = = !settings.mute;
-
+			settings.mute = !settings.mute;
 		}
     }
 })();

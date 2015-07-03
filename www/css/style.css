@@ -75,3 +75,15 @@ ion-content {
 .default-colour {
     background-color: #fad2ab;
 }
+.red-colour {
+    background-color: red;
+}
+.blue-colour {
+    background-color: blue;
+}
+.orange-colour {
+    background-color: orange;
+}
+.green-colour {
+    background-color: green;
+}
