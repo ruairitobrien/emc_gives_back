@@ -1,3 +1,4 @@
+//Task Branch
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -47,10 +48,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: 'templates/health-washing.html'
   })
 
+  .state('health-mybody', {
+          url: '/health/mybody',
+          templateUrl: 'templates/health-mybody.html'
+      })
+
   .state('health-washing-how-to', {
       url: '/health/washing/how-to',
-      templateUrl: 'templates/health-washing-how-to.html'
-  });
+      templateUrl: 'templates/health-washing-how-to.html',
+      controller: 'HealthCtrl'
+  })
+      .state('health-mybody-how-to', {
+          url: '/health/mybody/how-to',
+          templateUrl: 'templates/health-mybody-how-to.html'
+      });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/dash');
