@@ -12,7 +12,7 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'compile-templates', 'scripts']);
+gulp.task('default', ['sass', 'compile-templates']);
 
 gulp.task('sass', function(done) {
   gulp.src(['./scss/ionic.app.scss', './scss/topbar.scss'])
