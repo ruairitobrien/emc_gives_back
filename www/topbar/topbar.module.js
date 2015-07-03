@@ -1,1 +1,1 @@
-angular.module('starter.topbar', []);
+angular.module('starter.topbar', ['starter.settings']);
