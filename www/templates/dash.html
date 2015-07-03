@@ -1,5 +1,24 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
+    <div>
+    <a href="#/newcategory" class="">
+      <img src="img/add-category.ico"/>
+    </a>
+    <h1>Add New Category</h1>
+    </div>
+    <br>
+
+    <div ng-repeat="cat in categories">
+
+      <div>
+        <a href="{{cat.catUrl}}" class="">
+          <img src="{{cat.catImgUrl}}"/>
+        </a>
+        <h1>{{cat.catTitle}}</h1>
+      </div>
+
+    </div>
+
     <a href="#/social" class="cope-tile tile-3">
       <img src="img/social.png"/>
     </a>

@@ -50,6 +50,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('health-washing-how-to', {
       url: '/health/washing/how-to',
       templateUrl: 'templates/health-washing-how-to.html'
+  })
+
+  .state('newcategory', {
+      url: '/newcategory',
+      templateUrl: 'templates/create-new-category.html'
   });
 
   // if none of the above states are matched, use this as the fallback
