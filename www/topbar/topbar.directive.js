@@ -1,12 +1,14 @@
 (function () {
     'use strict';
-    angular.module('sarter.topbar').directive('topBar', topBar);
+    angular.module('starter.topbar').directive('topBar', topBar);
 
 
     topBar.$inject = [];
 
     function topBar() {
-
+        return {
+            templateUrl: 'topbar/topbar-template.html'
+        }
     }
 
 })();
