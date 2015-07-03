@@ -72,6 +72,11 @@ angular.module('starter', ['ionic', 'templates', 'starter.controllers', 'starter
       templateUrl: 'templates/create-new-category.html',
       controller: 'CategoryCtrl'
 
+  })
+
+  .state('settings', {
+      url: '/settings',
+      templateUrl: 'templates/settings.html'
   });
 
   // if none of the above states are matched, use this as the fallback

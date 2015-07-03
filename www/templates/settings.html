@@ -1,0 +1,19 @@
+<ion-view view-title="settings">
+  <ion-content ng-class="colour" >
+    <a href="#/health/my-body" class="cope-tile tile-4">
+        <img src="img/mute.png" ng-hide="topbarCtrl.settings.mute" ng-click="topbarCtrl.mute()">
+    </a>
+
+    <a href="#/topbar.colorPicker" class="cope-tile tile-4">
+      <img src="img/colour.png" ng-click="topbarCtrl.colourPicker()">
+    </a>
+
+    <a href="#/health/food" class="cope-tile tile-4">
+      <img src="img/lock.png">
+    </a>
+
+     <a href="#/newcategory" class="">
+        <img src="img/add-category.ico"/>
+      </a>
+  </ion-content>
+</ion-view>
