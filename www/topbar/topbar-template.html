@@ -3,12 +3,13 @@
 	<div class="nav">
 		<a href="#/"><img src="../img/home.png"></a>
 		<a href="javascript:history.back()"><img src="../img/back.png"></a>
-		<!-- <div class="options">
-			<img class="mute" src="img/mute.png">
-			<img src="img/colour.png" ng-click="topbarCtrl.changeColour()">
-			<img class="lock" src="img/lock.png">
-	    </div> -->
 	</div>
-	<div style="clear: both;">	
+	<div class="options">
+		<img src="img/mute.png" ng-hide="topbarCtrl.settings.mute" ng-click="topbarCtrl.mute()">
+		<img src="img/volume.png" ng-show="topbarCtrl.settings.mute" ng-click="topbarCtrl.mute()">
+		<img src="img/colour.png" ng-click="topbarCtrl.colourPicker()">
+		<img src="img/lock.png">
+	</div>
+	<div style="clear: both;">
 	</div>
 </div>

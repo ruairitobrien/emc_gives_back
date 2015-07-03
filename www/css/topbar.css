@@ -7,7 +7,12 @@
 .top-bar .options {
   margin-left: 50px;
   float: right; }
-.top-bar .colour-picker .colour {
+  .top-bar .options .unmute {
+    background-color: #fad2ab; }
+  .top-bar .options .mute {
+    display: none; }
+
+.colour-picker .colour {
   width: 100px;
   height: 100px;
   display: inline-block; }
