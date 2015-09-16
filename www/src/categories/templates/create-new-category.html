@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Create New Category</h1>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="list">
+            <label class="item item-input">
+                <label style="padding-right:10px;">Title: </label>
+                <input type="text" ng-model="category.title" placeholder="Title">
+            </label>
+            <label class="item item-input">
+                <label style="padding-right:10px;">Image: </label>
+                <input type="file" placeholder="Image" id="image">
+            </label>
+         <!--   <label class="item item-input">
+                <label>Audio</label>
+                <input type="file" placeholder="Audio"/>
+            </label>-->
+        </div>
+
+        <button class="button button-block button-calm" ng-click="createNewCategory(category)">
+            Add Category
+        </button>
+        <button class="button button-block button-energized" ng-click="cancelCreateCategory()">
+            Cancel
+        </button>
+
+    </ion-content>
+</ion-modal-view>

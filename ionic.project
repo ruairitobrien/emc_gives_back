@@ -1,4 +1,11 @@
 {
   "name": "Cope",
-  "app_id": ""
+  "app_id": "",
+   "gulpStartupTasks": ["build", "watch"],
+   "watchPatterns": [
+       "www/**/*",
+       "!www/js/**/*",
+       "!www/css/**/*",
+       "!www/lib/**/*"
+     ]
 }

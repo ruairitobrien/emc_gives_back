@@ -1,0 +1,28 @@
+.top-bar img {
+    margin-left: 50px;
+    height: 90px;
+    width: 104px
+}
+
+.top-bar .nav {
+    float: left
+}
+
+.top-bar .options {
+    margin-left: 50px;
+    float: right
+}
+
+.top-bar .options .unmute {
+    background-color: #fad2ab
+}
+
+.top-bar .options .mute {
+    display: none
+}
+
+.colour-picker .colour {
+    width: 100px;
+    height: 100px;
+    display: inline-block
+}

@@ -1,0 +1,20 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Edit Categories</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list show-delete="true">
+            <ion-item ng-repeat="category in categories">
+                {{category.title}}
+                <ion-delete-button class="ion-minus-circled" ng-click="removeCategory(category.id)"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+        <button class="button button-block button-calm" ng-click="newCategory()">
+            New Category
+        </button>
+        <button class="button button-block button-balanced" ng-click="cancelEditCategories()">
+            Done
+        </button>
+
+    </ion-content>
+</ion-modal-view>

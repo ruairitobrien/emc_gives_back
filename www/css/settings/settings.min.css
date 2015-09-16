@@ -1,0 +1,84 @@
+.default-colour {
+    background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%)
+}
+
+.red-colour {
+    background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%)
+}
+
+.blue-colour {
+    background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: linear-gradient(90deg, #085078 10%, #85D8CE 90%)
+}
+
+.purple-colour {
+    background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%)
+}
+
+.green-colour {
+    background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%)
+}
+
+.default-colour .nav-bar-block ion-header-bar, bar.default-colour, bar.default-colour .bar.bar-positive {
+    border-color: #FFD194;
+    background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+    background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%)
+}
+
+.red-colour .nav-bar-block ion-header-bar, bar.red-colour, bar.red-colour .bar.bar-positive {
+    border-color: #EDDE5D;
+    background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+    background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%)
+}
+
+.blue-colour .nav-bar-block ion-header-bar, bar.blue-colour, bar.blue-colour .bar.bar-positive {
+    border-color: #85D8CE;
+    background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+    background: linear-gradient(90deg, #085078 10%, #85D8CE 90%)
+}
+
+.purple-colour .nav-bar-block ion-header-bar, bar.purple-colour, bar.purple-colour .bar.bar-positive {
+    border-color: #B993D6;
+    background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+    background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%)
+}
+
+.green-colour .nav-bar-block ion-header-bar, bar.green-colour, bar.green-colour .bar.bar-positive {
+    border-color: #DBD5A4;
+    background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+    background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%)
+}

@@ -1,0 +1,135 @@
+.default-colour {
+  /**background-color: #FAD2AB;*/
+  background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* W3C */
+}
+
+.red-colour {
+  background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* W3C */
+}
+
+.blue-colour {
+  background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* W3C */
+}
+
+.purple-colour {
+  background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* W3C */
+}
+
+.green-colour {
+  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* W3C */
+}
+
+bar.default-colour, bar.default-colour .bar.bar-positive, .default-colour .nav-bar-block ion-header-bar {
+  border-color: #FFD194;
+  background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%);
+  /* W3C */
+}
+
+bar.red-colour, bar.red-colour .bar.bar-positive, .red-colour .nav-bar-block ion-header-bar {
+  border-color: #EDDE5D;
+  background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%);
+  /* W3C */
+}
+
+bar.blue-colour, bar.blue-colour .bar.bar-positive, .blue-colour .nav-bar-block ion-header-bar {
+  border-color: #85D8CE;
+  background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #085078 10%, #85D8CE 90%);
+  /* W3C */
+}
+
+bar.purple-colour, bar.purple-colour .bar.bar-positive, .purple-colour .nav-bar-block ion-header-bar {
+  border-color: #B993D6;
+  background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%);
+  /* W3C */
+}
+
+bar.green-colour, bar.green-colour .bar.bar-positive, .green-colour .nav-bar-block ion-header-bar {
+  border-color: #DBD5A4;
+  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* IE10 */
+  background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%);
+  /* W3C */
+}

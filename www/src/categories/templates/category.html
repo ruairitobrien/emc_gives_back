@@ -1,0 +1,19 @@
+<ion-view view-title="{{categoryCtrl.category.title}}">
+
+    <ion-nav-buttons side="right">
+
+        <a class="button settings-icon button-icon icon ion-ios-home" ui-sref="dash" ng-if="!locked">
+        </a>
+
+        <a class="button settings-icon button-icon icon ion-ios-gear" ng-click="categoryCtrl.showMenu()">
+        </a>
+
+    </ion-nav-buttons>
+
+    <ion-content ng-class="colour">
+        <a ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}" class="cope-tile tile-4">
+            <img ng-src="{{howto.image}}"/>
+        </a>
+
+    </ion-content>
+</ion-view>

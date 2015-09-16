@@ -1,0 +1,39 @@
+<ion-view view-title="{{howToCtrl.howto.title}}">
+
+    <ion-nav-buttons side="right">
+
+        <a class="button settings-icon button-icon icon ion-ios-home" ui-sref="dash" ng-if="!locked">
+        </a>
+
+        <a class="button settings-icon button-icon icon ion-ios-gear" ng-click="howToCtrl.showMenu()">
+        </a>
+
+    </ion-nav-buttons>
+
+    <ion-content ng-class="colour">
+
+       <span ng-repeat="task in howToCtrl.howto.tasks" onclick="this.querySelector('audio').play()"
+             ng-click="trackAudio(task)">
+            <!--<a href="#/howtos/{{howToCtrl.howto.id}}/tasks/{{$index}}" class="cope-tile tile-6">-->
+           <a href="" class="cope-tile tile-6">
+               <img ng-src="{{task.image}}"/>
+
+               <img src="img/mark-done.png" class="task-badge"/>
+
+               <audio ng-if="task.audio" preload>
+                   <source ng-src="{{task.audio}}"/>
+               </audio>
+           </a>
+        </span>
+
+        <div ng-if="howToCtrl.hasVideo" class="tasks-video">
+            <iframe ng-if="howToCtrl.externalVideo" width="420" height="315" ng-src="{{howToCtrl.videoUrl}}"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+
+            <video ng-if="!howToCtrl.externalVideo" width="420" height="315" controls ng-src="{{howToCtrl.videoUrl}}"/>
+        </div>
+
+    </ion-content>
+</ion-view>
+
