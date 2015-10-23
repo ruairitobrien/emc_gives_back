@@ -1,0 +1,14 @@
+<ion-modal-view class="edit-pin-view">
+	<ion-header-bar>
+	  <h1 class="title">Edit Mode</h1>
+	</ion-header-bar>
+	<ion-content>
+	<div name="editPinForm">
+	  <p>Please enter your pin:
+	    <input type="text" class="edit-pin-input" name="editPinInput" value="" required ng-model="editPinInput" ng-trim="false">
+	    <span class="error" ng-show="">Pin incorrect please try again!</span>
+		<button type="button" class="button edit-pin-submit-button" ng-click="editPinSubmit()">Submit</button>
+	  </p>
+	 </div>
+	</ion-content>
+</ion-modal-view>

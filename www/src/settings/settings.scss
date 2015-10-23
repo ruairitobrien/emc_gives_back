@@ -84,3 +84,13 @@ bar.green-colour, bar.green-colour .bar.bar-positive, .green-colour .nav-bar-blo
   background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
   background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
 }
+
+.edit-pin-view {
+  width: 400px;
+  min-height: 160px;
+  max-height: 160px
+  .scroll-content {
+    min-height: 160px;
+    max-height: 160px;
+  }
+}

@@ -12,6 +12,7 @@
         'CategoryService',
         'settings',
         'colourPicker',
+        'editPin',
         'categoryEditor'
     ];
 
@@ -23,6 +24,7 @@
                            CategoryService,
                            settings,
                            colourPicker,
+                           editPin,
                            categoryEditor) {
         /* jshint validthis: true */
         var vm = this;
@@ -53,6 +55,9 @@
             categoryEditor.setupCategoryEditorModal($scope).then(function (modal) {
                 $scope.categoryEditorModal = modal;
             });
+            editPin.setupEditPinModal($scope).then(function (modal) {
+                $scope.editPinModal = modal;
+            });
         }
 
         function showMenu() {
@@ -79,7 +84,9 @@
                         settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
-                        $scope.categoryEditorModal.show();
+                        $scope.editPinModal.show();
+
+                       // $scope.categoryEditorModal.show();
                     }
 
                     return true;

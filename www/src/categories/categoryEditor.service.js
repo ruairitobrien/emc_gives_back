@@ -47,6 +47,5 @@
                 animation: 'slide-in-up'
             });
         }
-
     }
 })();

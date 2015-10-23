@@ -1,5 +1,10 @@
 <ion-view view-title="settings">
   <ion-content ng-class="colour" >
+    <div class="cope-nav">
+      <a href="#/" class="cope-tile tile-thumb tile-left">
+        <img src="img/home.png">
+      </a>
+    </div>
     <a href="#/health/my-body" class="cope-tile tile-4">
         <img src="img/mute.png" ng-hide="topbarCtrl.settings.mute" ng-click="topbarCtrl.mute()">
         <img src="img/volume.png" ng-show="topbarCtrl.settings.mute" ng-click="topbarCtrl.mute()">

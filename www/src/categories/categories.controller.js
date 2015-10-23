@@ -13,7 +13,8 @@
         'CategoryService',
         'HowToService',
         'settings',
-        'colourPicker'
+        'colourPicker',
+        'editPin'
     ];
 
     /* @ngInject */
@@ -25,7 +26,8 @@
                           CategoryService,
                           HowToService,
                           settings,
-                          colourPicker) {
+                          colourPicker,
+                          editPin) {
         /* jshint validthis: true */
         var vm = this;
         var categoryId = $stateParams.categoryId;
@@ -53,6 +55,10 @@
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
+            });
+
+            editPin.setupEditPinModal($scope).then(function (modal) {
+                $scope.editPinModal = modal;
             });
         }
 
