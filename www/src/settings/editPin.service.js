@@ -14,9 +14,13 @@
 
         function setupEditPinModal(scope) {
             scope.editPinSubmit = function() {
-                if(scope.editPinModal.el.getElementsByClassName('edit-pin-input')[0].value == "1234"){
+                if(this.editPinInput == "1234"){
                     scope.categoryEditorModal.show();
                     scope.editPinModal.hide();
+                    this.editPinInput = null;
+                    scope.editPinErrorMsg = false;
+                } else {
+                    scope.editPinErrorMsg = true;
                 }
             }
 

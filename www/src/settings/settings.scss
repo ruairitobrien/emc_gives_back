@@ -87,10 +87,24 @@ bar.green-colour, bar.green-colour .bar.bar-positive, .green-colour .nav-bar-blo
 
 .edit-pin-view {
   width: 400px;
-  min-height: 160px;
-  max-height: 160px
+  height: 190px;
+  min-height: 190px;
+  left: 36%;
   .scroll-content {
-    min-height: 160px;
-    max-height: 160px;
+    height: 145px;
+    min-height: 145px;
+    input {
+      width: 370px;
+      border: 1px #CCCCCC solid;
+      margin: 10px 0px 10px 0px;
+    }
+    .error {
+      display: block;
+      color: #FF0000;
+    }
   }
+}
+
+.action-sheet .button {
+  color: #000000;
 }

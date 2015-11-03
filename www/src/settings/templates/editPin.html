@@ -6,8 +6,8 @@
 	<div name="editPinForm">
 	  <p>Please enter your pin:
 	    <input type="text" class="edit-pin-input" name="editPinInput" value="" required ng-model="editPinInput" ng-trim="false">
-	    <span class="error" ng-show="">Pin incorrect please try again!</span>
-		<button type="button" class="button edit-pin-submit-button" ng-click="editPinSubmit()">Submit</button>
+	    <span class="error" ng-model="editPinError" ng-show="editPinErrorMsg">Pin incorrect please try again!</span>
+		<button type="button" class="button edit-pin-submit-button" name="editPinSubmit" ng-click="editPinSubmit()">Submit</button>
 	  </p>
 	 </div>
 	</ion-content>
