@@ -1,15 +1,18 @@
 .task-clicked {
-  border: solid 5px green; }
+  border: solid 5px green;
+}
 
 .task-badge {
   display: none;
   width: 50px;
-  height: 50px; }
+  height: 50px;
+}
 
 .task-clicked .task-badge {
   display: block;
   margin: auto;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .tasks-video {
   margin-top: 25px; }

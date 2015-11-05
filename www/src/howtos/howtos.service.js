@@ -30,13 +30,24 @@
             this.selectedhowTo = d;
         };
 
+        var createHowTo = function(catId,data){
+            var me = this;
+
+            dpd.howtos.post(data).success(function(res){
+                if(res){
+                    me.getHowToByParent(catId); //update the howtos obj with new list
+                }
+            });
+        };
+
         return {
             howtos: {},
             selectedhowTo: {},
             getHowToByParent: getHowToByParent,
             getHowToById: getHowToById,
             setHowTos: setHowTos,
-            setSelectedHowTos: setSelectedHowTos
+            setSelectedHowTos: setSelectedHowTos,
+            createHowTo: createHowTo
         };
     }
 

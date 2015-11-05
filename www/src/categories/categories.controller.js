@@ -12,6 +12,7 @@
         '$ionicNavBarDelegate',
         'CategoryService',
         'HowToService',
+        'addHowTo',
         'settings',
         'colourPicker',
         'editPin'
@@ -25,6 +26,7 @@
                           $ionicNavBarDelegate,
                           CategoryService,
                           HowToService,
+                          addHowTo,
                           settings,
                           colourPicker,
                           editPin) {
@@ -42,15 +44,17 @@
         ////////////////
 
         function activate() {
-            vm.howtos = HowToService.getHowToByParent(categoryId);
+
+            HowToService.getHowToByParent(categoryId);
 
             $scope.$watch(function () {
                 return HowToService.howtos;
             }, function (newVal, oldVal) {
+
                 if (newVal !== oldVal) {
                     vm.howtos = newVal;
                 }
-            },true);
+            });
 
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
@@ -60,6 +64,11 @@
             editPin.setupEditPinModal($scope).then(function (modal) {
                 $scope.editPinModal = modal;
             });
+
+            addHowTo.setupHowToModal($scope).then(function (modal) {
+                $scope.howToModal = modal;
+            });
+
         }
 
         function showMenu() {
@@ -69,6 +78,9 @@
                     {
                         text: (settings.locked) ? '<i class="icon ion-unlocked"></i>Unlock' : '<i class="icon' +
                         ' ion-locked"></i>Lock'
+                    },
+                    {
+                        text: '<i class="icon ion-edit"></i>Edit'
                     }
                 ],
                 titleText: 'Settings',
@@ -82,6 +94,8 @@
                     } else if (index === 1) {
                         $scope.locked = settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
+                    } else if(index === 2){
+                        $scope.howToModal.show();
                     }
                     return true;
                 }

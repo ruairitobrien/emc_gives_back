@@ -12,6 +12,7 @@
 
     <ion-content ng-class="colour">
         <a ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}" class="cope-tile tile-4">
+            <h2>{{howto.title}}</h2>
             <img ng-src="{{howto.image}}"/>
         </a>
 

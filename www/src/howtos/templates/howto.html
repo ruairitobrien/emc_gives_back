@@ -12,18 +12,21 @@
 
     <ion-content ng-class="colour">
 
-       <span ng-repeat="task in howToCtrl.howto.tasks" onclick="this.querySelector('audio').play()"
-             ng-click="trackAudio(task)">
-            <!--<a href="#/howtos/{{howToCtrl.howto.id}}/tasks/{{$index}}" class="cope-tile tile-6">-->
-           <a href="" class="cope-tile tile-6">
-               <img ng-src="{{task.image}}"/>
+       <span ng-repeat="task in howToCtrl.howto.tasks" onclick="this.querySelector('audio').play()">
+            <div class="cope-tile tile-4">
+                <p class="task-title">{{task.taskName}}</p>
+                <div class="task-desc-box">
+                    <p>{{task.taskDesc}}</p>
+                </div>
+                <br>
 
-               <img src="img/mark-done.png" class="task-badge"/>
+                <!-- ADD IMAGE -->
+                <img ng-src="{{task.image}}"/>
 
-               <audio ng-if="task.audio" preload>
-                   <source ng-src="{{task.audio}}"/>
-               </audio>
-           </a>
+                <audio ng-if="task.audio" preload>
+                    <source ng-src="{{task.audio}}"/>
+                </audio>
+            </div>
         </span>
 
         <div ng-if="howToCtrl.hasVideo" class="tasks-video">

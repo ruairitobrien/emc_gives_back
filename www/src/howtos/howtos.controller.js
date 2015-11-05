@@ -53,6 +53,7 @@
             $scope.$watch(function () {
                 return HowToService.selectedhowTo;
             }, function (newVal, oldVal) {
+
                 if (newVal !== oldVal) {
                     vm.howto = newVal;
 

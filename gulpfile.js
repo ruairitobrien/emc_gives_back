@@ -30,7 +30,7 @@ gulp.task('watch', function () {
 
 
 gulp.task('sass', function (done) {
-    gulp.src(['./scss/ionic.app.scss', './www/src/**/*.scss'])
+     gulp.src(['./scss/ionic.app.scss', './www/src/**/*.scss'])
         .pipe($.sass({
             errLogToConsole: true
         }))
