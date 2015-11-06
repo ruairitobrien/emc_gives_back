@@ -59,6 +59,7 @@
 
                     vm.hasVideo = (vm.howto.video !== undefined && vm.howto.video !== null);
                     if (vm.hasVideo) {
+                        vm.howto.video = (vm.howto.video).replace('watch?v=', 'embed/');
                         vm.videoUrl = $sce.trustAsResourceUrl(vm.howto.video);
                         vm.externalVideo = /^(f|ht)tps?:\/\//i.test(vm.videoUrl);
                     }
