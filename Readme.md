@@ -13,12 +13,12 @@ The use case is a child that would use either a tablet or a computer to engage w
     * `git clone http://IAS00HYC6T01.isus.emc.com/ahlmaj/emc_gives_back.git`
 * install [node js](https://nodejs.org/)
 * on the command line ("Start - Run - cmd.exe")
-    * install grunt (`npm install -g gulp`)
-    * install bower (`npm install -g bower`)
-    * install ionic (`npm install -g ionic`)
+    * install grunt (`npm i -g gulp`)
+    * install bower (`npm i -g bower`)
+    * install ionic (`npm i -g ionic`)
     * navigate to project directory and install dependencies
-        * `npm install`
-        * `bower install`
+        * `npm i`
+        * `bower i`
     * serve in local browser (`ionic serve`)
 * now the website will automatically update in browser whenever you change/save a file
 
