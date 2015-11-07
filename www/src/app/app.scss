@@ -1,3 +1,7 @@
+/**TODO: 300px looks OK but (someone with css skills) might come up with something better than a hard coded height.*/
+$tile-image-height: 300px;
+
+
 ion-content {
   text-align: center;
   padding: 1em;
@@ -9,7 +13,7 @@ ion-content {
 
 .cope-tile {
   display: inline-block;
-  border: solid #404040 5px;
+  border: solid #404040 4px;
   border-radius: 5px;
   background-color: white;
 }
@@ -34,12 +38,6 @@ ion-content {
   margin: 1%;
 }
 
-.cope-tile.tile-thumb {
-  width: 100px;
-  border: solid black 2px;
-  margin: 1em;
-}
-
 .tile-left {
   float: left;
 }
@@ -48,9 +46,9 @@ ion-content {
   float: right;
 }
 
-.cope-tile img {
+.cope-tile > img {
   max-width: 100%;
-  height: auto;
+  max-height: $tile-image-height;
   margin: 0;
   padding: 0;
 }

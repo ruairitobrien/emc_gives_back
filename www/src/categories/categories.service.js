@@ -2,42 +2,57 @@
     'use strict';
 
     angular.module('givesBack.categories')
-        .factory('CategoryService', CategoryService);
+        .service('CategoryService', CategoryService);
 
-    CategoryService.$inject = ['dpd'];
+    CategoryService.$inject = ['$q', 'dpd', 'lodash'];
 
     /* @ngInject */
-    function CategoryService(dpd) {
+    function CategoryService($q, dpd, lodash) {
+        var categories = {};
 
-        var setCategories = function(d){
-            this.categories = d;
-            };
-
-        var getCategories = function(){
-            var me = this;
-            dpd.categories.get().success(function(res){
-                me.setCategories(res);
-            });
+        var getCachedCategories = function () {
+            return categories;
         };
 
-        var createCategory = function(data){
-            var me = this;
-            dpd.categories.post(data).success(function(){
-                //update categories obj
-                me.getCategories();
-            });
+        var setCategories = function (newCategories) {
+            categories = newCategories;
         };
 
-        var removeCategory = function(d){
-            var me = this;
-            dpd.categories.del(d).success(function(){
-                //update categories obj
-                me.getCategories();
+        var getCategories = function () {
+            var deferred = $q.defer();
+
+            dpd.categories.get().success(function (res) {
+                setCategories(res);
+                deferred.resolve(categories);
+            }, deferred.reject);
+
+            return deferred.promise;
+        };
+
+        var createCategory = function (data) {
+            var deferred = $q.defer();
+
+            dpd.categories.post(data).success(function (category) {
+                categories.push(category);
+            }, deferred.reject);
+
+            return deferred.promise;
+        };
+
+        var removeCategory = function (categoryToRemove) {
+            var deferred = $q.defer();
+
+            dpd.categories.del(d).success(function () {
+                lodash.remove(categories, function (category) {
+                    return category.id === categoryToRemove.id;
+                }, deferred.reject);
             });
+
+            return deferred.promise;
         };
 
         return {
-            categories: {},
+            getCachedCategories: getCachedCategories,
             getCategories: getCategories,
             createCategory: createCategory,
             removeCategory: removeCategory,

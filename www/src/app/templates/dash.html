@@ -12,7 +12,7 @@
         <a ng-repeat="category in dashboardCtrl.categories" href="#/categories/{{category.id}}"
            class="cope-tile tile-3">
             <h3>{{category.title}}</h3>
-            <img ng-src="{{category.image}}"/>
+            <img ng-src="{{category.image}}" alt="{{category.title}}"/>
         </a>
 
     </ion-content>

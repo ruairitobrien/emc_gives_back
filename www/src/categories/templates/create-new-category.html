@@ -11,7 +11,8 @@
             </label>
             <label class="item item-input">
                 <label style="padding-right:10px;">Image: </label>
-                <input type="file" placeholder="Image" id="image">
+                <input type="file" placeholder="Image"
+                       onchange="angular.element(this).scope().setFiles(this)"/>
             </label>
          <!--   <label class="item item-input">
                 <label>Audio</label>

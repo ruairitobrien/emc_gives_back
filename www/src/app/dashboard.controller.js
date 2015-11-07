@@ -7,7 +7,6 @@
     DashboardCtrl.$inject = [
         '$scope',
         '$ionicActionSheet',
-        '$ionicModal',
         '$ionicNavBarDelegate',
         'CategoryService',
         'settings',
@@ -19,7 +18,6 @@
     /* @ngInject */
     function DashboardCtrl($scope,
                            $ionicActionSheet,
-                           $ionicModal,
                            $ionicNavBarDelegate,
                            CategoryService,
                            settings,
@@ -39,15 +37,13 @@
         function activate() {
 
             //initial call to categories
-           CategoryService.getCategories();
+            CategoryService.getCategories();
 
             $scope.$watch(function () {
-                return CategoryService.categories;
-            }, function (newVal, oldVal) {
-                if (newVal !== oldVal) {
-                    vm.categories = newVal;
-                }
-            },true);
+                return CategoryService.getCachedCategories();
+            }, function (newVal) {
+                vm.categories = newVal;
+            }, true);
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
@@ -85,8 +81,6 @@
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
                         $scope.editPinModal.show();
-
-                       // $scope.categoryEditorModal.show();
                     }
 
                     return true;

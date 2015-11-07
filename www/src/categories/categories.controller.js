@@ -8,9 +8,7 @@
         '$scope',
         '$stateParams',
         '$ionicActionSheet',
-        '$ionicModal',
         '$ionicNavBarDelegate',
-        'CategoryService',
         'HowToService',
         'addHowTo',
         'settings',
@@ -22,9 +20,7 @@
     function CategoryCtrl($scope,
                           $stateParams,
                           $ionicActionSheet,
-                          $ionicModal,
                           $ionicNavBarDelegate,
-                          CategoryService,
                           HowToService,
                           addHowTo,
                           settings,
@@ -94,7 +90,7 @@
                     } else if (index === 1) {
                         $scope.locked = settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
-                    } else if(index === 2){
+                    } else if (index === 2) {
                         $scope.howToModal.show();
                     }
                     return true;
