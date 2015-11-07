@@ -2,22 +2,22 @@
     'use strict';
 
     var defaultColours = [
-        'pastel-blue',
+        'pastel-magenta',
         'pastel-pink',
-        'pastel-purple',
+        'pastel-pink2',
         'pastel-red',
+        'dark-pastel-red',
+        'pastel-blue',
+        'pastel-violet',
+        'light-pastel-purple',
+        'pastel-purple',
         'dark-pastel-purple',
         'pastel-grey',
         'dark-pastel-green',
-        'light-pastel-purple',
-        'pastel-magenta',
-        'dark-pastel-red',
-        'pastel-orange',
+        'pastel-green',
         'pastel-brown',
         'pastel-yellow',
-        'pastel-pink2',
-        'pastel-violet',
-        'pastel-green'
+        'pastel-orange'
     ];
 
     angular
