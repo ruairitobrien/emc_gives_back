@@ -1,3 +1,5 @@
+[ ![Codeship Status for ruairitobrien/emc_gives_back](https://codeship.com/projects/03a3f540-670a-0133-443a-4ec2c5b447b8/status?branch=master)](https://codeship.com/projects/114014)
+
 # About
 
 This app is intended to be used by children with learning disabilities.
