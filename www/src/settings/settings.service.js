@@ -6,7 +6,7 @@
 
     function settings() {
         return {
-            colour: 'default-colour',
+            colour: 'pastel-blue',
             locked: false,
             mute: false
         };

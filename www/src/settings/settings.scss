@@ -1,88 +1,162 @@
-.default-colour {
-  /**background-color: #FAD2AB;*/
-  background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* W3C */
+$pastel-blue: #AEC6CF;
+$pastel-pink: #DEA5A4;
+$pastel-purple: #B39EB5;
+$pastel-red: #FF6961;
+$dark-pastel-purple: #966FD6;
+$pastel-grey: #CFCFC4;
+$dark-pastel-green: #03C03C;
+$light-pastel-purple: #B19CD9;
+$pastel-magenta: #F49AC2;
+$dark-pastel-red: #C23B22;
+$pastel-orange: #FFB347;
+$pastel-brown: #836953;
+$pastel-yellow: #FDFD96;
+$pastel-pink2: #FFD1DC;
+$pastel-violet: #CB99C9;
+$pastel-green: #77DD77;
+
+.pastel-blue {
+  background: $pastel-blue;
 }
 
-.red-colour {
-  background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* W3C */
+.bar.bar-positive, .pastel-blue .nav-bar-block ion-header-bar {
+  border-color: $pastel-blue;
+  background: $pastel-blue;
 }
 
-.blue-colour {
-  background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* W3C */
+.pastel-pink {
+  background: $pastel-pink;
 }
 
-.purple-colour {
-  background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* W3C */
+.bar.bar-positive, .pastel-pink .nav-bar-block ion-header-bar {
+  border-color: $pastel-pink;
+  background: $pastel-pink;
 }
 
-.green-colour {
-  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
+.pastel-purple {
+  background: $pastel-purple;
 }
 
-bar.default-colour, bar.default-colour .bar.bar-positive, .default-colour .nav-bar-block ion-header-bar {
-  border-color: #FFD194;
-  background: -webkit-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #FAD2AB 10%, #F3E2A9 90%); /* W3C */
+.bar.bar-positive, .pastel-purple .nav-bar-block ion-header-bar {
+  border-color: $pastel-purple;
+  background: $pastel-purple;
 }
 
-bar.red-colour, bar.red-colour .bar.bar-positive, .red-colour .nav-bar-block ion-header-bar {
-  border-color: #EDDE5D;
-  background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* W3C */
-
+.pastel-red {
+  background: $pastel-red;
 }
 
-bar.blue-colour, bar.blue-colour .bar.bar-positive, .blue-colour .nav-bar-block ion-header-bar {
-  border-color: #85D8CE;
-  background: -webkit-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #085078 10%, #85D8CE 90%); /* W3C */
+.bar.bar-positive, .pastel-red .nav-bar-block ion-header-bar {
+  border-color: $pastel-red;
+  background: $pastel-red;
 }
 
-bar.purple-colour, bar.purple-colour .bar.bar-positive, .purple-colour .nav-bar-block ion-header-bar {
-  border-color: #B993D6;
-  background: -webkit-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #B993D6 10%, #8CA6DB 90%); /* W3C */
+.dark-pastel-purple {
+  background: $dark-pastel-purple;
 }
 
-bar.green-colour, bar.green-colour .bar.bar-positive, .green-colour .nav-bar-block ion-header-bar {
-  border-color: #DBD5A4;
-  background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* FF3.6+ */
-  background: -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* IE10 */
-  background: -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
-  background: linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
+.bar.bar-positive, .dark-pastel-purple .nav-bar-block ion-header-bar {
+  border-color: $dark-pastel-purple;
+  background: $dark-pastel-purple;
+}
+
+.pastel-grey {
+  background: $pastel-grey;
+}
+
+.bar.bar-positive, .pastel-grey .nav-bar-block ion-header-bar {
+  border-color: $pastel-grey;
+  background: $pastel-grey;
+}
+
+.dark-pastel-green {
+  background: $dark-pastel-green;
+}
+
+.bar.bar-positive, .dark-pastel-green .nav-bar-block ion-header-bar {
+  border-color: $dark-pastel-green;
+  background: $dark-pastel-green;
+}
+
+.light-pastel-purple {
+  background: $light-pastel-purple;
+}
+
+.bar.bar-positive, .light-pastel-purple .nav-bar-block ion-header-bar {
+  border-color: $light-pastel-purple;
+  background: $light-pastel-purple;
+}
+
+.pastel-magenta {
+  background: $pastel-magenta;
+}
+
+.bar.bar-positive, .pastel-magenta .nav-bar-block ion-header-bar {
+  border-color: $pastel-magenta;
+  background: $pastel-magenta;
+}
+
+.dark-pastel-red {
+  background: $dark-pastel-red;
+}
+
+.bar.bar-positive, .dark-pastel-red .nav-bar-block ion-header-bar {
+  border-color: $dark-pastel-red;
+  background: $dark-pastel-red;
+}
+
+.pastel-orange {
+  background: $pastel-orange;
+}
+
+.bar.bar-positive, .pastel-orange .nav-bar-block ion-header-bar {
+  border-color: $pastel-orange;
+  background: $pastel-orange;
+}
+
+.pastel-brown {
+  background: $pastel-brown;
+}
+
+.bar.bar-positive, .pastel-brown .nav-bar-block ion-header-bar {
+  border-color: $pastel-brown;
+  background: $pastel-brown;
+}
+
+.pastel-yellow {
+  background: $pastel-yellow;
+}
+
+.bar.bar-positive, .pastel-yellow .nav-bar-block ion-header-bar {
+  border-color: $pastel-yellow;
+  background: $pastel-yellow;
+}
+
+.pastel-pink2 {
+  background: $pastel-pink2;
+}
+
+.bar.bar-positive, .pastel-pink2 .nav-bar-block ion-header-bar {
+  border-color: $pastel-pink2;
+  background: $pastel-pink2;
+}
+
+.pastel-violet {
+  background: $pastel-violet;
+}
+
+.bar.bar-positive, .pastel-violet .nav-bar-block ion-header-bar {
+  border-color: $pastel-violet;
+  background: $pastel-violet;
+}
+
+.pastel-green {
+  background: $pastel-green;
+}
+
+.bar.bar-positive, .pastel-green .nav-bar-block ion-header-bar {
+  border-color: $pastel-green;
+  background: $pastel-green;
 }
 
 .edit-pin-view {

@@ -13,7 +13,7 @@ angular.module('givesBack').constant('BACKEND', {
 
             .state('dash', {
                 url: '/dash',
-                templateUrl: 'app/templates/dash.html',
+                templateUrl: 'app/templates/dashboard.html',
                 controller: 'DashboardCtrl as dashboardCtrl'
             });
 
