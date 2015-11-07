@@ -1,0 +1,6 @@
+---
+    name
+:
+complete;
+$ionicLoading;
+---;
