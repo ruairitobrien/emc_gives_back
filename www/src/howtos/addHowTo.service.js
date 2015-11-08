@@ -4,10 +4,10 @@
     angular.module('givesBack.howtos')
         .factory('addHowTo', addHowTo);
 
-    addHowTo.$inject = ['$ionicModal', '$stateParams', 'settings', 'HowToService'];
+    addHowTo.$inject = ['$ionicModal', '$stateParams', 'settings', 'HowToService', 'fileUpload', 'dpdConfig'];
 
     /* @ngInject */
-    function addHowTo($ionicModal,  $stateParams, settings, HowToService) {
+    function addHowTo($ionicModal, $stateParams, settings, HowToService, fileUpload, dpdConfig) {
 
         return {
             setupHowToModal: setupHowToModal,
@@ -36,26 +36,44 @@
 
             };
 
+            scope.setFiles = function (element) {
+                scope.howtoImage = element.files[0];
+            };
+
             scope.addHowTo = function(howTo){
 
-                //get category from params & append it to the model
-                var catId = $stateParams.categoryId;
-                howTo.parentId = catId;
+                fileUpload.uploadFile({
+                    file: scope.howtoImage,
+                    url: dpdConfig.serverRoot + '/fileupload',
+                    subdir: 'howtos'
+                }).then(function (result) {
+                    var uplaodedFile = result.data[0];
+                    var howtoModel = {
+                        title: howTo.title,
+                        videoUrl: howTo.videoUrl,
+                        categoryId: $stateParams.categoryId,
+                        image: dpdConfig.serverRoot + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename
 
-                //append image, this is a default image, image uploads need to be handled
-                howTo.image = '../img/brushteeth.jpg';
+                    };
+                    if (!!scope.tasks) {
+                        //append image to tasks, this is default as image uploads need to be handled
+                        scope.tasks.forEach(function (d) {
+                            d.image = '../img/brushteeth.jpg';
+                        });
 
-                //append image to tasks, this is default as image uploads need to be handled
-                scope.tasks.forEach(function(d){
-                    d.image = '../img/brushteeth.jpg';
+                        //append tasks to howto obj
+                        howtoModel.tasks = scope.tasks;
+                    }
+
+                    HowToService.createHowTo(howtoModel); //pass howto obj to service
+
+                    scope.howToModal.hide();
+
+                }, function (err) {
+                    console.log(err);
+                    scope.howToModal.hide();
                 });
 
-                //append tasks to howto obj
-                howTo.tasks = scope.tasks;
-
-                HowToService.createHowTo(catId, howTo); //pass howto obj to service
-
-                scope.howToModal.hide();
             };
 
             return $ionicModal.fromTemplateUrl('howtos/templates/addhowto.html', {

@@ -18,7 +18,9 @@
             </label>
             <label class="item item-input">
                 <label style="padding-right:10px;">Cover Image: </label>
-                <input type="file" placeholder="Image" id="howtoimage">
+                <input type="file" placeholder="Image"
+                       id="howtoimage"
+                       onchange="angular.element(this).scope().setFiles(this)"/>
             </label>
 
             <button class="button icon-right ion-chevron-right button-calm" style="margin-top:20px" ng-click="navigateForm()">

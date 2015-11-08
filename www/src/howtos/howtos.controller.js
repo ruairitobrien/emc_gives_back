@@ -13,7 +13,6 @@
         '$stateParams',
         '$sce',
         '$ionicActionSheet',
-        '$ionicModal',
         '$ionicNavBarDelegate',
         'HowToService',
         'settings',
@@ -25,7 +24,6 @@
                        $stateParams,
                        $sce,
                        $ionicActionSheet,
-                       $ionicModal,
                        $ionicNavBarDelegate,
                        HowToService,
                        settings,
@@ -52,19 +50,16 @@
 
             $scope.$watch(function () {
                 return HowToService.selectedhowTo;
-            }, function (newVal, oldVal) {
+            }, function (newVal) {
+                vm.howto = newVal;
 
-                if (newVal !== oldVal) {
-                    vm.howto = newVal;
-
-                    vm.hasVideo = (vm.howto.video !== undefined && vm.howto.video !== null);
-                    if (vm.hasVideo) {
-                        vm.howto.video = (vm.howto.video).replace('watch?v=', 'embed/');
-                        vm.videoUrl = $sce.trustAsResourceUrl(vm.howto.video);
-                        vm.externalVideo = /^(f|ht)tps?:\/\//i.test(vm.videoUrl);
-                    }
+                vm.hasVideo = (vm.howto.video !== undefined && vm.howto.video !== null);
+                if (vm.hasVideo) {
+                    vm.howto.video = (vm.howto.video).replace('watch?v=', 'embed/');
+                    vm.videoUrl = $sce.trustAsResourceUrl(vm.howto.video);
+                    vm.externalVideo = /^(f|ht)tps?:\/\//i.test(vm.videoUrl);
                 }
-            },true);
+            }, true);
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
