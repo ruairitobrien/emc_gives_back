@@ -32,24 +32,23 @@
 
             dpd.categories.post(data).success(function (category) {
                 self.categories.push(category);
+                deferred.resolve(category);
             }, deferred.reject);
 
             return deferred.promise;
         };
 
-        this.removeCategory = function (categoryToRemove) {
+        this.removeCategory = function (categoryId) {
             var deferred = $q.defer();
 
-            dpd.categories.del(categoryToRemove.id).success(function () {
-                lodash.remove(categories, function (category) {
-                    return category.id === categoryToRemove.id;
+            dpd.categories.del(categoryId).success(function () {
+                lodash.remove(self.categories, function (category) {
+                    return category.id === categoryId;
                 }, deferred.reject);
             });
 
             return deferred.promise;
         };
-
-        return this;
     }
 
 })();

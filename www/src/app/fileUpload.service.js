@@ -29,7 +29,7 @@
                     $http.post(uploadUrl, fd, {
                         transformRequest: angular.identity,
                         headers: {'Content-Type': undefined}
-                    }, resolve, reject);
+                    }).then(resolve, reject);
                 } else {
                     var errorMessage = (!!args.url && !!args.file) ?
                         'URL and File are both empty and are both required' :

@@ -4,7 +4,7 @@
     angular.module('givesBack.categories')
         .factory('newCategory', newCategory);
 
-    newCategory.$inject = ['$ionicModal', '$http', 'CategoryService', 'BACKEND', 'fileUpload'];
+    newCategory.$inject = ['$ionicModal', 'CategoryService', 'BACKEND', 'fileUpload'];
 
     /* @ngInject */
     function newCategory($ionicModal, CategoryService, BACKEND, fileUpload) {
@@ -23,21 +23,24 @@
             scope.createNewCategory = function (category) {
                 fileUpload.uploadFile({
                     file: scope.categoryImage,
-                    ur: BACKEND.url + '/fileUpload'
-                }).then(function onUploadSuccess(data) {
-                    var uplaodedFile = data[0];
+                    url: BACKEND.url + '/fileupload',
+                    subdir: 'categories'
+                }).then(function (result) {
+                    var uplaodedFile = result.data[0];
                     var categoryModel = {
                         title: category.title,
                         image: BACKEND.url + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename
 
                     };
                     CategoryService.createCategory(categoryModel).then(function (category) {
-
+                        console.log(JSON.stringify(category));
+                        scope.newCategoryModal.hide(category);
                     }, function (err) {
                         console.log(err);
+                        scope.newCategoryModal.hide();
                     });
-                    scope.newCategoryModal.hide();
-                }, function onUploadFailed(err) {
+
+                }, function (err) {
                     console.log(err);
                     scope.newCategoryModal.hide();
                 });
