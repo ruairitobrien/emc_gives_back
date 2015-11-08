@@ -1,45 +1,39 @@
-angular
-    .module('givesBack.users')
-    .factory('authentication', authentication);
+(function () {
+    angular
+        .module('givesBack.users')
+        .service('UserService', UserService);
 
-authentication.$inject = ['$cookies', '$q', 'dpd', 'dpdConfig'];
 
-/* @ngInject */
-function authentication($cookies, $q, dpd, dpdConfig) {
-    var service = {
-        getLoggedInUser: getLoggedInUser,
-        login: login,
-        logout: logout
-    };
+    UserService.$inject = ['$q', 'authentication'];
 
-    return service;
+    /* @ngInject */
+    function UserService($q, authentication) {
+        var service = {
+            user: null,
+            getUser: getUser
+        };
 
-    ////////////////
+        return service;
 
-    function getLoggedInUser() {
-        return dpd.users.get('me');
-    }
+        ////////////////
 
-    function login(user) {
-        var deferred = $q.defer();
-
-        $http.post(dpdConfig.serverRoot + 'users/login', {username: user.username, password: user.password})
-            .then(
-                function (session, error) {
-                    if (error) {
+        function getUser() {
+            var deferred = $q.defer();
+            if (!!service.user) {
+                deferred.resolve(service.user);
+            } else {
+                authentication.getLoggedInUser(function (user, error) {
+                    if (!!error || !user) {
                         deferred.reject(error);
                     } else {
-                        $cookies.sid = session.data.id; // set the sid cookie
-                        deferred.resolve(session.data);
+                        service.user = user;
+                        deferred.resolve(user);
                     }
                 });
+            }
+            return deferred.promise;
 
-        return deferred.promise;
+        }
+
     }
-
-    function logout() {
-        dpd.users.get('logout');
-    }
-
-}
-
+})();

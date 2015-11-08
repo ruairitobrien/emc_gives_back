@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('givesBack.settings', []);
+    angular.module('givesBack.settings', ['givesBack.users']);
 
 })();

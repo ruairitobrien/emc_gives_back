@@ -3,7 +3,7 @@
 
     angular.module('givesBack')
         .value('dpdConfig', {
-            collections: ['categories', 'howtos'],
+            collections: ['users', 'categories', 'howtos', 'fileupload'],
             serverRoot: 'http://localhost:3000', // optional, defaults to same server
             socketOptions: {reconnectionDelayMax: 3000}, // optional socket io additional configuration
             useSocketIo: false, // optional, defaults to false
