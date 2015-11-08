@@ -19,7 +19,7 @@
             var me = this;
             dpd.howtos.get({id: id}).success(function (res) {
                 me.setSelectedHowTos(res);
-            })
+            });
         };
 
         var setHowTos = function (d) {

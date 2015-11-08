@@ -44,8 +44,9 @@
             dpd.categories.del(categoryId).success(function () {
                 lodash.remove(self.categories, function (category) {
                     return category.id === categoryId;
-                }, deferred.reject);
-            });
+                });
+                deferred.resolve();
+            }, deferred.reject);
 
             return deferred.promise;
         };

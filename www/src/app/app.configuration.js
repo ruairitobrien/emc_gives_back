@@ -2,9 +2,6 @@
     'use strict';
 
     angular.module('givesBack')
-        .constant('BACKEND', {
-            url: 'http://localhost:3000'
-        })
         .value('dpdConfig', {
             collections: ['categories', 'howtos'],
             serverRoot: 'http://localhost:3000', // optional, defaults to same server

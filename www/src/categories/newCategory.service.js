@@ -4,10 +4,10 @@
     angular.module('givesBack.categories')
         .factory('newCategory', newCategory);
 
-    newCategory.$inject = ['$ionicModal', 'CategoryService', 'BACKEND', 'fileUpload'];
+    newCategory.$inject = ['$ionicModal', 'CategoryService', 'dpdConfig', 'fileUpload'];
 
     /* @ngInject */
-    function newCategory($ionicModal, CategoryService, BACKEND, fileUpload) {
+    function newCategory($ionicModal, CategoryService, dpdConfig, fileUpload) {
 
         return {
             setupNewCategoryModal: setupNewCategoryModal,
@@ -23,13 +23,13 @@
             scope.createNewCategory = function (category) {
                 fileUpload.uploadFile({
                     file: scope.categoryImage,
-                    url: BACKEND.url + '/fileupload',
+                    url: dpdConfig.serverRoot + '/fileupload',
                     subdir: 'categories'
                 }).then(function (result) {
                     var uplaodedFile = result.data[0];
                     var categoryModel = {
                         title: category.title,
-                        image: BACKEND.url + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename
+                        image: dpdConfig.serverRoot + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename
 
                     };
                     CategoryService.createCategory(categoryModel).then(function (category) {
