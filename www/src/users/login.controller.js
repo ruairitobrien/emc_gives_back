@@ -9,29 +9,20 @@ function LoginCtrl($ionicPopup, $state, authentication) {
     /* jshint validthis: true */
     var vm = this;
 
-    vm.activate = activate;
     vm.login = login;
     vm.title = 'LoginCtrl';
-    vm.user = {};
 
-
-    activate();
 
     ////////////////
 
-    function activate() {
-    }
-
-    function login() {
-        authentication.login(vm.user).success(function (data) {
+    function login(user) {
+        authentication.login(user).then(function (data) {
+            console.log(JSON.stringify(data));
             $state.go('dashboard');
-        }).error(function (data) {
+        }, function (err) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
-                template: 'Please check your credentials!'
-            });
-            alertPopup.then(function () {
-                $state.go('signup');
+                template: 'Please check your credentials'
             });
         });
     }

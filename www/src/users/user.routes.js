@@ -12,7 +12,7 @@
                 .state('signup', {
                     url: '/signup',
                     templateUrl: 'users/templates/signup.html',
-                    controller: 'SignupCtrl as SignupCtrl'
+                    controller: 'SignupCtrl as signupCtrl'
                 });
         });
 })();

@@ -1,4 +1,3 @@
-var db = null;
 angular.module('givesBack', [
         'ionic',
         'givesBack.categories',
@@ -7,7 +6,8 @@ angular.module('givesBack', [
         'givesBack.settings',
         'givesBack.tasks',
         'givesBack.users',
-        'dpd'
+        'dpd',
+        'ngCookies'
 
     ])
 
@@ -23,5 +23,23 @@ angular.module('givesBack', [
                 StatusBar.styleLightContent();
             }
 
+        });
+    })
+    .run(function ($rootScope, $state, $location, $log, $cookieStore, UserService) {
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+            if (toState.name !== 'login' && toState.name !== 'signup') {
+                var auth = $cookieStore.get('authdata');
+                if (!UserService.user || !UserService.user.id === auth) {
+                    UserService.getUser().then(function () {
+                        $state.go(toState.name);
+                    }, function (err) {
+                        $log.error(err);
+                        $state.go('login');
+                    });
+                    event.preventDefault();
+
+                }
+            }
         });
     });

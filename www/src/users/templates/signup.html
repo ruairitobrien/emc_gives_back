@@ -1,4 +1,70 @@
 <ion-view view-title="Signup" name="signup-view">
     <ion-content class="padding">
+
+        <form name="signupForm" novalidate="" ng-submit="signupCtrl.signup(user)">
+
+            <div class="list list-inset">
+                <label class="item item-input"
+                       ng-class="{ 'has-errors' : signupForm.username.$touched && signupForm.username.$invalid, 'no-errors' : signupForm.username.$valid}">
+                    <input name="username" type="text" placeholder="Username" ng-model="user.username" ng-minlength="2"
+                           ng-maxlength="40" required autofocus>
+                </label>
+
+                <div class="error-container" ng-show="signupForm.username.$touched && signupForm.username.$error"
+                     ng-messages="signupForm.username.$error">
+                    <div ng-messages-include="signup-error-list.html"></div>
+                </div>
+                <label class="item item-input">
+                    <input type="password" name="password" placeholder="Password" ng-model="user.password"
+                           ng-minlength="5"
+                           ng-maxlength="100" required>
+                </label>
+
+                <div class="error-container"
+                     ng-show="signupForm.password.$touched && signupForm.password.$error"
+                     ng-messages="signupForm.password.$error">
+                    <div ng-messages-include="signup-error-list.html"></div>
+                </div>
+                <label class="item item-input">
+                    <input type="password" name="confirmPassword"
+                           placeholder="Confirm Password"
+                           ng-model="user.confirmPassword"
+                           required
+                           compare-to="user.password"/>
+                </label>
+
+                <div class="error-container last-error-container"
+                     ng-show="signupForm.confirmPassword.$touched && signupForm.confirmPassword.$error"
+                     ng-messages="signupForm.confirmPassword.$error">
+                    <div ng-messages-include="signup-error-list.html"></div>
+                </div>
+
+            </div>
+
+            <button class="button button-block button-positive" type="submit" ng-disabled="!signupForm.$valid">Signup
+            </button>
+
+            <a ui-sref="login" class="button button-block button-calm">Login</a>
+        </form>
+
+        <script id="signup-error-list.html" type="text/ng-template">
+            <div class="error" ng-message="required">
+                <i class="ion-information-circled"></i>
+                This field is required
+            </div>
+            <div class="error" ng-message="minlength">
+                <i class="ion-information-circled"></i>
+                Minimum length of this field is 5 characters
+            </div>
+            <div class="error" ng-message="maxlength">
+                <i class="ion-information-circled"></i>
+                Maximum length of this field is 20 characters
+            </div>
+            <div class="error" ng-message="compareTo">
+                <i class="ion-information-circled"></i>
+                Passwords do not match
+            </div>
+        </script>
+
     </ion-content>
 </ion-view>

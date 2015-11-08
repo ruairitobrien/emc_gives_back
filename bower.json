@@ -5,6 +5,7 @@
     "ng-lodash": "~0.3.0",
     "angular-audio": "~1.7.0",
     "ionic": "~1.1.1",
-    "angular-cookies": "~1.4.7"
+    "angular-cookies": "~1.4.7",
+    "angular-messages": "~1.4.7"
   }
 }
