@@ -1,8 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('givesBack.settings')
+    angular.module('givesBack.howtos')
         .factory('addHowTo', addHowTo);
+
+    addHowTo.$inject = ['$ionicModal', '$stateParams', 'settings', 'HowToService'];
 
     /* @ngInject */
     function addHowTo($ionicModal,  $stateParams, settings, HowToService) {
@@ -56,7 +58,7 @@
                 scope.howToModal.hide();
             };
 
-            return $ionicModal.fromTemplateUrl('settings/templates/addhowto.html', {
+            return $ionicModal.fromTemplateUrl('howtos/templates/addhowto.html', {
                 scope: scope,
                 animation: 'slide-in-up'
             });

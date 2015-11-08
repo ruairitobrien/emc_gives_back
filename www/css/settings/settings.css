@@ -128,3 +128,6 @@
 
 .action-sheet .button {
   color: #000000; }
+
+.item-input > label {
+  padding-right: 10px; }

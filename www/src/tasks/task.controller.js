@@ -5,7 +5,7 @@
     'use strict';
 
     angular
-        .module('givesBack.howtos')
+        .module('givesBack.tasks')
         .controller('TaskCtrl', TaskCtrl);
 
     TaskCtrl.$inject = ['$stateParams', 'HowToService'];

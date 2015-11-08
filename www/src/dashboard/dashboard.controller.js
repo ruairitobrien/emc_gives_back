@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('givesBack')
+    angular.module('givesBack.dashboard')
         .controller('DashboardCtrl', DashboardCtrl);
 
     DashboardCtrl.$inject = [
@@ -26,9 +26,11 @@
                            categoryEditor) {
         /* jshint validthis: true */
         var vm = this;
+        vm.title = 'DashboardCtrl';
+
         vm.activate = activate;
         vm.showMenu = showMenu;
-        vm.title = 'DashboardCtrl';
+
 
         activate();
 
@@ -37,10 +39,13 @@
         function activate() {
 
             //initial call to categories
-            CategoryService.getCategories();
+            CategoryService.getCategories().catch(
+                function onCategoriesRetrievalFailure(err) {
+                    vm.err = err;
+                });
 
             $scope.$watch(function () {
-                return CategoryService.getCachedCategories();
+                return CategoryService.categories;
             }, function (newVal) {
                 vm.categories = newVal;
             }, true);

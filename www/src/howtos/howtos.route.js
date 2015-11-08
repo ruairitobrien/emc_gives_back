@@ -11,7 +11,7 @@
                 })
                 .state('task', {
                     url: '/howtos/:hottoId/tasks/:taskIndex',
-                    templateUrl: 'howtos/templates/task.html',
+                    templateUrl: 'tasks/templates/task.html',
                     controller: 'TaskCtrl as taskCtrl'
                 });
         });

@@ -1,6 +1,7 @@
 var db = null;
 angular.module('givesBack', [
         'ionic',
+        'givesBack.dashboard',
         'givesBack.categories',
         'givesBack.howtos',
         'givesBack.settings',

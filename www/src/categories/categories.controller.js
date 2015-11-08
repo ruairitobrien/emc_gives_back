@@ -52,7 +52,6 @@
                 }
             });
 
-
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
             });
