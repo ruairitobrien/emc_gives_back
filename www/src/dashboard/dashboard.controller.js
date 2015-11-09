@@ -8,28 +8,33 @@
         '$scope',
         '$ionicActionSheet',
         '$ionicNavBarDelegate',
+        '$state',
         'CategoryService',
         'settings',
         'colourPicker',
         'editPin',
-        'categoryEditor'
+        'categoryEditor',
+        'authentication'
     ];
 
     /* @ngInject */
     function DashboardCtrl($scope,
                            $ionicActionSheet,
                            $ionicNavBarDelegate,
+                           $state,
                            CategoryService,
                            settings,
                            colourPicker,
                            editPin,
-                           categoryEditor) {
+                           categoryEditor,
+                           authentication) {
         /* jshint validthis: true */
         var vm = this;
         vm.title = 'DashboardCtrl';
 
         vm.activate = activate;
         vm.showMenu = showMenu;
+        vm.openEditor = openEditor;
 
 
         activate();
@@ -59,6 +64,13 @@
             editPin.setupEditPinModal($scope).then(function (modal) {
                 $scope.editPinModal = modal;
             });
+
+            $scope.$on('modal.hidden', function () {
+                if ($scope.editShown && $scope.validPin) {
+                    $scope.editShown = false;
+                    $scope.categoryEditorModal.show();
+                }
+            });
         }
 
         function showMenu() {
@@ -71,6 +83,9 @@
                     },
                     {
                         text: '<i class="icon ion-edit"></i>Edit'
+                    },
+                    {
+                        text: '<i class="icon ion-log-out"></i>Logout'
                     }
                 ],
                 titleText: 'Settings',
@@ -85,12 +100,21 @@
                         settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
-                        $scope.editPinModal.show();
+                        openEditor();
+                    } else if (index === 3) {
+                        authentication.logout().finally(function () {
+                            $state.go('login');
+                        });
                     }
 
                     return true;
                 }
             });
+        }
+
+        function openEditor() {
+            $scope.editShown = true;
+            $scope.editPinModal.show();
         }
 
     }

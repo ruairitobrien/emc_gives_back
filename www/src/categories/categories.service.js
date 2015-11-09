@@ -4,10 +4,10 @@
     angular.module('givesBack.categories')
         .service('CategoryService', CategoryService);
 
-    CategoryService.$inject = ['$q', 'dpd', 'lodash'];
+    CategoryService.$inject = ['$q', 'dpd', 'lodash', 'UserService'];
 
     /* @ngInject */
-    function CategoryService($q, dpd, lodash) {
+    function CategoryService($q, dpd, lodash, UserService) {
         var self = this;
         this.categories = [];
 
@@ -19,7 +19,7 @@
         this.getCategories = function () {
             var deferred = $q.defer();
 
-            dpd.categories.get().success(function (res) {
+            dpd.categories.get({owner: UserService.user.id}).success(function (res) {
                 self.setCategories(res);
                 deferred.resolve(self.categories);
             }, deferred.reject);

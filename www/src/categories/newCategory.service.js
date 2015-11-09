@@ -4,10 +4,10 @@
     angular.module('givesBack.categories')
         .factory('newCategory', newCategory);
 
-    newCategory.$inject = ['$ionicModal', 'CategoryService', 'dpdConfig', 'fileUpload'];
+    newCategory.$inject = ['$ionicModal', '$log', 'dpdConfig', 'CategoryService', 'UserService', 'fileUpload'];
 
     /* @ngInject */
-    function newCategory($ionicModal, CategoryService, dpdConfig, fileUpload) {
+    function newCategory($ionicModal, $log, dpdConfig, CategoryService, UserService, fileUpload) {
 
         return {
             setupNewCategoryModal: setupNewCategoryModal,
@@ -29,19 +29,19 @@
                     var uplaodedFile = result.data[0];
                     var categoryModel = {
                         title: category.title,
-                        image: dpdConfig.serverRoot + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename
-
+                        image: dpdConfig.serverRoot + '/upload/' + uplaodedFile.subdir + '/' + uplaodedFile.filename,
+                        owner: UserService.user.id
                     };
                     CategoryService.createCategory(categoryModel).then(function (category) {
-                        console.log(JSON.stringify(category));
+                        $log.log(JSON.stringify(category));
                         scope.newCategoryModal.hide(category);
                     }, function (err) {
-                        console.log(err);
+                        $log.error(err);
                         scope.newCategoryModal.hide();
                     });
 
                 }, function (err) {
-                    console.log(err);
+                    $log.error(err);
                     scope.newCategoryModal.hide();
                 });
             };

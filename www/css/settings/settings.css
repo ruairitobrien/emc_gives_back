@@ -112,11 +112,9 @@
 
 .edit-pin-view {
   width: 400px;
-  height: 190px;
   min-height: 190px;
   left: 36%; }
   .edit-pin-view .scroll-content {
-    height: 145px;
     min-height: 145px; }
     .edit-pin-view .scroll-content input {
       width: 370px;

@@ -16,8 +16,7 @@ function LoginCtrl($ionicPopup, $state, authentication) {
     ////////////////
 
     function login(user) {
-        authentication.login(user).then(function (data) {
-            console.log(JSON.stringify(data));
+        authentication.login(user).then(function (session) {
             $state.go('dashboard');
         }, function (err) {
             var alertPopup = $ionicPopup.alert({

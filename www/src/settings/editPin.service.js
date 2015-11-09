@@ -13,16 +13,20 @@
         };
 
         function setupEditPinModal(scope) {
-            scope.editPinSubmit = function() {
-                if(this.editPinInput == "1234"){
-                    scope.categoryEditorModal.show();
+            scope.validPin = false;
+
+            scope.editPinSubmit = function () {
+                if (this.pin === '1234') {
+                    scope.validPin = true;
+                    this.pin = null;
                     scope.editPinModal.hide();
-                    this.editPinInput = null;
-                    scope.editPinErrorMsg = false;
-                } else {
-                    scope.editPinErrorMsg = true;
                 }
-            }
+            };
+
+            scope.cancelPin = function () {
+                this.pin = null;
+                scope.editPinModal.hide();
+            };
 
             return $ionicModal.fromTemplateUrl('settings/templates/editPin.html', {
                 scope: scope,

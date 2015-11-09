@@ -1,14 +1,26 @@
 <ion-modal-view class="edit-pin-view">
-	<ion-header-bar>
-	  <h1 class="title">Edit Mode</h1>
-	</ion-header-bar>
-	<ion-content>
-	<div name="editPinForm">
-	  <p>Please enter your pin:
-	    <input type="text" class="edit-pin-input" name="editPinInput" value="" required ng-model="editPinInput" ng-trim="false">
-	    <span class="error" ng-model="editPinError" ng-show="editPinErrorMsg">Pin incorrect please try again!</span>
-		<button type="button" class="button edit-pin-submit-button" name="editPinSubmit" ng-click="editPinSubmit()">Submit</button>
-	  </p>
-	 </div>
-	</ion-content>
+    <ion-header-bar>
+        <h1 class="title">Edit Mode</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <form name="editPinForm" novalidate="" ng-submit="editPinSubmit()">
+            <p>Please enter your pin:
+                <input type="text" class="edit-pin-input" name="editPinInput" value="" ng-model="pin"
+                       ng-trim="false" required>
+
+            <div class="error-container last-error-container" ng-show="!validPin && editPinForm.$submitted">
+                <div class="error">
+                    <i class="ion-information-circled"></i>
+                    Pin incorrect please try again!
+                </div>
+            </div>
+            <button type="submit" class="button edit-pin-submit-button"
+                    ng-disabled="!editPinForm.editPinInput.$valid">Submit
+            </button>
+            <button type="button" class="button button-energized" ng-click="cancelPin()">Cancel
+            </button>
+            </p>
+        </form>
+
+    </ion-content>
 </ion-modal-view>

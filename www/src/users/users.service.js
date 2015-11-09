@@ -26,23 +26,22 @@
          */
         function getUser() {
             var deferred = $q.defer();
-            if (!!service.user) {
-                deferred.resolve(service.user);
-            } else {
-                authentication.getLoggedInUser().then(function (user) {
-                    if (!user) {
-                        var error = new Error('User not logged in');
-                        $log.error(error);
-                        deferred.reject(error);
-                    } else {
-                        service.user = user;
-                        deferred.resolve(service.user);
-                    }
-                }, function (err) {
-                    $log.error(err);
-                    deferred.reject(err);
-                });
-            }
+
+            authentication.getLoggedInUser().then(function (res) {
+                $log.log(JSON.stringify(res));
+                if (!res.data) {
+                    var error = new Error('User not logged in');
+                    $log.error(error);
+                    deferred.reject(error);
+                } else {
+                    service.user = res.data;
+                    deferred.resolve(service.user);
+                }
+            }, function (err) {
+                $log.error(err);
+                deferred.reject(err);
+            });
+
             return deferred.promise;
 
         }
