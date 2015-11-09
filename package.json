@@ -2,10 +2,12 @@
   "name": "cope",
   "version": "1.0.0",
   "description": "Cope: An Ionic project",
-  "devDependencies": {
+  "dependencies": {
     "cors": "^2.7.1",
     "express": "^4.12.4",
-    "lodash": "^3.10.0",
+    "lodash": "^3.10.0"
+  },
+  "devDependencies": {
     "bower": "^1.3.3",
     "gulp": "^3.9.0",
     "gulp-minify-css": "^0.3.0",
