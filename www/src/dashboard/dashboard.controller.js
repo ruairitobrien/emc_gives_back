@@ -34,7 +34,7 @@
 
         vm.activate = activate;
         vm.showMenu = showMenu;
-        vm.openEditor = openEditor;
+        vm.openDashboardEditor = openDashboardEditor;
 
 
         activate();
@@ -100,7 +100,7 @@
                         settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
-                        openEditor();
+                        openDashboardEditor();
                     } else if (index === 3) {
                         authentication.logout().finally(function () {
                             $state.go('login');
@@ -112,7 +112,7 @@
             });
         }
 
-        function openEditor() {
+        function openDashboardEditor() {
             $scope.editShown = true;
             $scope.editPinModal.show();
         }

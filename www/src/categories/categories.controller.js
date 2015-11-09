@@ -58,7 +58,7 @@
                 $scope.editPinModal = modal;
             });
 
-            addHowTo.setupHowToModal($scope).then(function (modal) {
+            addHowTo.setupHowToModal($scope, categoryId).then(function (modal) {
                 $scope.howToModal = modal;
             });
 

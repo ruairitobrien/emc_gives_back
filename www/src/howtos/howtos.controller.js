@@ -49,6 +49,8 @@
         ////////////////
 
         function activate() {
+            $scope.howto = {};
+            $scope.howto.tasks = [];
             HowToService.getHowToById(howtoId);
 
             $scope.$watch(function () {

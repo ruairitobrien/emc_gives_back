@@ -12,7 +12,7 @@
         <div ng-if="!!dashboardCtrl.categories && dashboardCtrl.categories.length === 0">
             <p>Looks like you don't have any categories yet.</p>
 
-            <button class="button button-block button-calm" ng-click="openEditor()">
+            <button class="button button-block button-calm" ng-click="dashboardCtrl.openDashboardEditor()">
                 Create Category
             </button>
         </div>

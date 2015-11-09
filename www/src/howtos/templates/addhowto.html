@@ -20,16 +20,21 @@
                 <label style="padding-right:10px;">Cover Image: </label>
                 <input type="file" placeholder="Image"
                        id="howtoimage"
-                       onchange="angular.element(this).scope().setFiles(this)"/>
+                       onchange="angular.element(this).scope().setHowToFiles(this)"/>
             </label>
 
             <button class="button button-energized" style="margin-top:20px" ng-click="cancelCreateHowTo()">
                 Cancel
             </button>
-            <button class="button icon-right ion-checkmark-round button-balanced" style="margin-top:20px"
+
+            <button ng-show="!howtoModalProcessing" class="button icon-right ion-checkmark-round button-balanced"
+                    style="margin-top:20px"
                     ng-click="addHowTo(howto)">
                 <b>Create</b>
             </button>
+            <ion-spinner class="spinner-energized" ng-if="howtoModalProcessing"></ion-spinner>
+
+
         </div>
 
     </ion-content>

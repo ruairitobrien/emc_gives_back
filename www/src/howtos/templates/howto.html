@@ -12,12 +12,12 @@
 
     <ion-content ng-class="colour">
 
-       <span ng-repeat="task in howToCtrl.howto.tasks" onclick="this.querySelector('audio').play()">
+       <span ng-repeat="task in howto.tasks" onclick="this.querySelector('audio').play()">
             <div class="cope-tile tile-4">
-                <p class="task-title">{{task.taskName}}</p>
+                <p class="task-title">{{task.name}}</p>
 
                 <div class="task-desc-box">
-                    <p>{{task.taskDesc}}</p>
+                    <p>{{task.description}}</p>
                 </div>
                 <br>
 

@@ -12,13 +12,15 @@
             <label class="item item-input">
                 <label style="padding-right:10px;">Image: </label>
                 <input type="file" placeholder="Image"
-                       onchange="angular.element(this).scope().setFiles(this)"/>
+                       onchange="angular.element(this).scope().setCategoryFiles(this)"/>
             </label>
         </div>
 
-        <button class="button button-block button-calm" ng-click="createNewCategory(category)">
+        <button ng-show="!categoryModalProcessing" class="button button-block button-calm"
+                ng-click="createNewCategory(category)">
             Add Category
         </button>
+        <ion-spinner class="spinner-energized" ng-if="categoryModalProcessing"></ion-spinner>
         <button class="button button-block button-energized" ng-click="cancelCreateCategory()">
             Cancel
         </button>
