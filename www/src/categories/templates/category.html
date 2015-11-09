@@ -11,10 +11,23 @@
     </ion-nav-buttons>
 
     <ion-content ng-class="colour">
-        <a ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}" class="cope-tile tile-4">
-            <h2>{{howto.title}}</h2>
-            <img ng-src="{{howto.image}}"/>
-        </a>
+
+        <div ng-if="!!categoryCtrl.howtos && categoryCtrl.howtos.length === 0">
+            <p>Looks like you don't have any How Tos yet.</p>
+
+            <button class="button button-block button-calm" ng-click="categoryCtrl.openEditor()">
+                Create How To
+            </button>
+        </div>
+
+        <ion-spinner class="spinner-energized" ng-if="!categoryCtrl.howtos"></ion-spinner>
+
+        <div class="howtoList">
+            <a ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}" class="cope-tile tile-4">
+                <h2>{{howto.title}}</h2>
+                <img ng-src="{{howto.image}}"/>
+            </a>
+        </div>
 
     </ion-content>
 </ion-view>

@@ -1,0 +1,49 @@
+<ion-modal-view>
+    <ion-content>
+
+        <div class="tasks">
+            <p style="text-align: center">
+                Add a task for your how to, tasks are the steps which form the how to
+                ie. a how to brush your teeth one task would be get your toothbrush</p>
+
+            <div class="list" ng-show="tasks.length > 0" ng-repeat="t in tasks">
+
+                <a class="item item-thumbnail-left" href="#">
+                    <img src="../img/brushteeth.jpg">
+
+                    <h2>{{t.taskName}}</h2>
+
+                    <p>{{t.taskDesc}}</p>
+                </a>
+
+            </div>
+
+            <label class="item item-input">
+                <label>Task Name: </label>
+                <input type="text" ng-model="task.taskname" placeholder="Task Name">
+            </label>
+            <label class="item item-input">
+                <label>Task Description: </label>
+                <input type="text" ng-model="task.taskdesc" placeholder="Task Description">
+            </label>
+            <label class="item item-input">
+                <label>Task Image: </label>
+                <input type="file" placeholder="Image" id="taskimage">
+            </label>
+            <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="navigateForm()"
+               style="float: left; margin-top:20px;">Back</a>
+            <span style="float: right;">
+            <button class="button icon-right ion-plus-round button-calm" ng-click="addTask(task)"
+                    style="margin-top:20px">
+                Add Task
+            </button>
+            <button class="button icon-right ion-checkmark-round button-balanced" ng-click="addHowTo(howto)"
+                    style="margin-top:20px">
+                Finish
+            </button>
+            </span>
+        </div>
+
+
+    </ion-content>
+</ion-modal-view>

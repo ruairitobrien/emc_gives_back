@@ -16,7 +16,9 @@
         '$ionicNavBarDelegate',
         'HowToService',
         'settings',
-        'colourPicker'
+        'colourPicker',
+        'addTask',
+        'editPin'
     ];
 
     /* @ngInject */
@@ -27,16 +29,17 @@
                        $ionicNavBarDelegate,
                        HowToService,
                        settings,
-                       colourPicker) {
+                       colourPicker,
+                       addTask,
+                       editPin) {
         /* jshint validthis: true */
         var vm = this;
         var howtoId = $stateParams.howtoId;
 
         vm.showMenu = showMenu;
         vm.activate = activate;
+        vm.openEditor = openEditor;
         vm.title = 'HowToCtrl';
-        vm.howto = {};
-
         vm.trackAudio = function (audio) {
             audio.cls = 'task-clicked';
         };
@@ -46,23 +49,38 @@
         ////////////////
 
         function activate() {
-            vm.howto = HowToService.getHowToById(howtoId);
+            HowToService.getHowToById(howtoId);
 
             $scope.$watch(function () {
                 return HowToService.selectedhowTo;
             }, function (newVal) {
-                vm.howto = newVal;
+                $scope.howto = newVal;
 
-                vm.hasVideo = (vm.howto.video !== undefined && vm.howto.video !== null);
+                vm.hasVideo = ($scope.howto.video !== undefined && $scope.howto.video !== null);
                 if (vm.hasVideo) {
-                    vm.howto.video = (vm.howto.video).replace('watch?v=', 'embed/');
-                    vm.videoUrl = $sce.trustAsResourceUrl(vm.howto.video);
+                    $scope.howto.video = ($scope.howto.video).replace('watch?v=', 'embed/');
+                    vm.videoUrl = $sce.trustAsResourceUrl($scope.howto.video);
                     vm.externalVideo = /^(f|ht)tps?:\/\//i.test(vm.videoUrl);
                 }
             }, true);
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
+            });
+
+            editPin.setupEditPinModal($scope).then(function (modal) {
+                $scope.editPinModal = modal;
+            });
+
+            addTask.setupTaskModal($scope).then(function (modal) {
+                $scope.taskModal = modal;
+            });
+
+            $scope.$on('modal.hidden', function () {
+                if ($scope.editShown && $scope.validPin) {
+                    $scope.editShown = false;
+                    $scope.taskModal.show();
+                }
             });
         }
 
@@ -73,6 +91,9 @@
                     {
                         text: (settings.locked) ? '<i class="icon ion-unlocked"></i>Unlock' : '<i class="icon' +
                         ' ion-locked"></i>Lock'
+                    },
+                    {
+                        text: '<i class="icon ion-edit"></i>Edit'
                     }
                 ],
                 titleText: 'Settings',
@@ -86,10 +107,17 @@
                     } else if (index === 1) {
                         $scope.locked = settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
+                    } else if (index === 2) {
+                        openEditor();
                     }
                     return true;
                 }
             });
+        }
+
+        function openEditor() {
+            $scope.editShown = true;
+            $scope.editPinModal.show();
         }
 
 

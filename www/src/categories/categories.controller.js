@@ -33,6 +33,7 @@
         vm.howtos = [];
         vm.activate = activate;
         vm.showMenu = showMenu;
+        vm.openEditor = openEditor;
         vm.title = 'CategoryCtrl';
 
         activate();
@@ -45,11 +46,8 @@
 
             $scope.$watch(function () {
                 return HowToService.howtos;
-            }, function (newVal, oldVal) {
-
-                if (newVal !== oldVal) {
-                    vm.howtos = newVal;
-                }
+            }, function (newVal) {
+                vm.howtos = newVal;
             });
 
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
@@ -62,6 +60,13 @@
 
             addHowTo.setupHowToModal($scope).then(function (modal) {
                 $scope.howToModal = modal;
+            });
+
+            $scope.$on('modal.hidden', function () {
+                if ($scope.editShown && $scope.validPin) {
+                    $scope.editShown = false;
+                    $scope.howToModal.show();
+                }
             });
 
         }
@@ -90,11 +95,16 @@
                         $scope.locked = settings.locked = !settings.locked;
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
-                        $scope.howToModal.show();
+                        openEditor();
                     }
                     return true;
                 }
             });
+        }
+
+        function openEditor() {
+            $scope.editShown = true;
+            $scope.editPinModal.show();
         }
 
     }
