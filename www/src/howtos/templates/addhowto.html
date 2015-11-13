@@ -1,41 +1,63 @@
 <ion-modal-view>
     <ion-header-bar>
-        <h1 class="title">Add How To</h1>
+        <h1 class="title">Add How-To</h1>
     </ion-header-bar>
     <ion-content>
-        <div class="list">
-            <p style="text-align: center">
-                A How to is a collection of tasks or steps that describe how to do something, it
-                can be anything,ie. a how to brush your teeth, how to wash your hands etc. </p>
-            <label class="item item-input">
-                <label style="padding-right:10px;">Title: </label>
-                <input type="text" ng-model="howto.title" placeholder="The title of your new how to">
-            </label>
+        <form name="addHowtoForm" novalidate="" ng-submit="addHowTo(howto)">
 
-            <label class="item item-input">
-                <label style="padding-right:10px;">Video Url: </label>
-                <input type="text" ng-model="howto.video" placeholder="The video to embed for your new how to">
-            </label>
-            <label class="item item-input">
-                <label style="padding-right:10px;">Cover Image: </label>
-                <input type="file" placeholder="Image"
-                       id="howtoimage"
-                       onchange="angular.element(this).scope().setHowToFiles(this)"/>
-            </label>
+            <div class="list">
+                <p style="text-align: center">
+                    A How-to is a collection of tasks or steps that describe how to do something, it
+                    can be anything,ie. a how to brush your teeth, how to wash your hands etc. </p>
+                <label class="item item-input">
+                    <label class="modal-input-label">Title: </label>
+                    <input name="howtoTitle" type="text" ng-model="howto.title"
+                           placeholder="The title of your new how-to" required>
+                </label>
 
-            <button class="button button-energized" style="margin-top:20px" ng-click="cancelCreateHowTo()">
-                Cancel
-            </button>
+                <div class="error-container" ng-show="addHowtoForm.howtoTitle.$error"
+                     ng-messages="addHowtoForm.howtoTitle.$error">
+                    <div class="info" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        How-to title is required
+                    </div>
+                </div>
 
-            <button ng-show="!howtoModalProcessing" class="button icon-right ion-checkmark-round button-balanced"
-                    style="margin-top:20px"
-                    ng-click="addHowTo(howto)">
-                <b>Create</b>
-            </button>
-            <ion-spinner class="spinner-energized" ng-if="howtoModalProcessing"></ion-spinner>
+                <label class="item item-input">
+                    <label class="modal-input-label">Cover Image: </label>
+                    <input name="howtoImage" type="file" placeholder="Image"
+                           id="howtoimage" valid-file ng-model="howtoImageFIleName"
+                           onchange="angular.element(this).scope().setHowToFiles(this)" required accept="image/*"/>
+                </label>
+
+                <div class="error-container last-error-container"
+                     ng-show="addHowtoForm.howtoImage.$error"
+                     ng-messages="addHowtoForm.howtoImage.$error">
+                    <div class="info" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        How-to cover image is required
+                    </div>
+                </div>
+
+                <label class="item item-input">
+                    <label class="modal-input-label">Video Url: </label>
+                    <input type="text" ng-model="howto.video"
+                           placeholder="The video to embed for your new how-to (currently only YouTube videos are supported)">
+                </label>
 
 
-        </div>
+                <button type="button" class="button button-energized modal-form-button" ng-click="cancelCreateHowTo()">
+                    Cancel
+                </button>
 
+                <button ng-show="!howtoModalProcessing"
+                        class="button icon-right ion-checkmark-round button-balanced modal-form-button"
+                        ng-disabled="!addHowtoForm.$valid" type="submit">
+                    <b>Create</b>
+                </button>
+                <ion-spinner class="spinner-energized" ng-if="howtoModalProcessing"></ion-spinner>
+
+            </div>
+        </form>
     </ion-content>
 </ion-modal-view>

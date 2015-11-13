@@ -20,11 +20,15 @@
                     scope.validPin = true;
                     this.pin = null;
                     scope.editPinModal.hide();
+                } else {
+                    this.pin = null;
+                    scope.validPin = false;
                 }
             };
 
             scope.cancelPin = function () {
                 this.pin = null;
+                scope.validPin = false;
                 scope.editPinModal.hide();
             };
 
