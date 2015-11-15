@@ -1,7 +1,6 @@
 /**TODO: 300px looks OK but (someone with css skills) might come up with something better than a hard coded height.*/
 $tile-image-height: 300px;
 
-
 ion-content {
   text-align: center;
   padding: 1em;
@@ -11,11 +10,16 @@ ion-content {
   margin-bottom: 3em;
 }
 
+.cope-col {
+  display: flex;
+}
+
 .cope-tile {
   display: inline-block;
   border: solid #404040 4px;
   border-radius: 5px;
   background-color: white;
+  width: 100%;
 }
 
 .cope-tile.tile-2 {
@@ -47,10 +51,10 @@ ion-content {
 }
 
 .cope-tile > img {
-  max-width: 100%;
-  max-height: $tile-image-height;
+  width: 100%;
   margin: 0;
   padding: 0;
+  height: 15vw;
 }
 
 .cope-button {
@@ -124,4 +128,24 @@ ion-content {
 
 .modal-input-label {
   padding-right: 10px;
+}
+
+.howto-title {
+  font-size: 2.3vw;
+}
+
+.category-title {
+  font-size: 2.3vw;
+}
+
+.task-title {
+  font-size: 1.7vw;
+}
+
+.task-desc-box {
+  font-size: 1.5vw;
+}
+
+.cope-list {
+  flex-wrap: wrap;
 }

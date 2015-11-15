@@ -12,24 +12,25 @@
 
     <ion-content ng-class="colour">
 
-       <span ng-repeat="task in howto.tasks" onclick="this.querySelector('audio').play()">
-            <div class="cope-tile tile-4">
-                <p class="task-title">{{task.name}}</p>
+      <div class="row cope-list">
+        <span class="col col-25 cope-col" ng-repeat="task in howto.tasks" onclick="this.querySelector('audio').play()">
+             <div class="cope-tile">
+                 <p class="task-title">{{task.name}}</p>
 
-                <div class="task-desc-box">
-                    <p>{{task.description}}</p>
-                </div>
-                <br>
+                 <div class="task-desc-box">
+                     <p>{{task.description}}</p>
+                 </div>
+                 <!-- <br> -->
 
-                <!-- ADD IMAGE -->
-                <img ng-src="{{task.image}}"/>
+                 <!-- ADD IMAGE -->
+                 <img ng-src="{{task.image}}"/>
 
-                <audio ng-if="task.audio" preload>
-                    <source ng-src="{{task.audio}}"/>
-                </audio>
-            </div>
-        </span>
-
+                 <audio ng-if="task.audio" preload>
+                     <source ng-src="{{task.audio}}"/>
+                 </audio>
+             </div>
+         </span>
+      </div>
 
         <div ng-if="howToCtrl.hasVideo" class="tasks-video">
             <iframe ng-if="howToCtrl.externalVideo" width="420" height="315" ng-src="{{howToCtrl.videoUrl}}"
@@ -42,4 +43,3 @@
 
     </ion-content>
 </ion-view>
-
