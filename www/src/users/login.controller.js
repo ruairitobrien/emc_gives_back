@@ -2,10 +2,10 @@ angular
     .module('givesBack.users')
     .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ['$ionicPopup', '$state', 'authentication'];
+LoginCtrl.$inject = ['$ionicPopup', '$ionicHistory', '$state', 'authentication'];
 
 /* @ngInject */
-function LoginCtrl($ionicPopup, $state, authentication) {
+function LoginCtrl($ionicPopup, $ionicHistory, $state, authentication) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -17,7 +17,10 @@ function LoginCtrl($ionicPopup, $state, authentication) {
 
     function login(user) {
         authentication.login(user).then(function (session) {
-            $state.go('dashboard');
+            $ionicHistory.nextViewOptions({
+                disableBack: true
+            });
+            $state.go('dashboard', {}, {location: "replace", reload: true});
         }, function (err) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',

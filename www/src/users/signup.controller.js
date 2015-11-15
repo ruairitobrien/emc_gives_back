@@ -2,10 +2,10 @@ angular
     .module('givesBack.users')
     .controller('SignupCtrl', SignupCtrl);
 
-SignupCtrl.$inject = ['$state', '$ionicPopup', '$log', 'authentication'];
+SignupCtrl.$inject = ['$state', '$ionicPopup', '$ionicHistory', '$log', 'authentication'];
 
 /* @ngInject */
-function SignupCtrl($state, $ionicPopup, $log, authentication) {
+function SignupCtrl($state, $ionicPopup, $ionicHistory, $log, authentication) {
     /* jshint validthis: true */
     var vm = this;
 
@@ -20,7 +20,10 @@ function SignupCtrl($state, $ionicPopup, $log, authentication) {
      */
     function signup(user) {
         authentication.signup(user).then(function () {
-            $state.go('dashboard');
+            $ionicHistory.nextViewOptions({
+                disableBack: true
+            });
+            $state.go('dashboard', {}, {location: "replace", reload: true});
         }, function (err) {
             $log.log(err);
             var message = err.message || 'An unknown error occurred. Please check your internet connection and try' +
