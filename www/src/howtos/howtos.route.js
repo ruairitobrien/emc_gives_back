@@ -8,11 +8,6 @@
                     url: '/howtos/:howtoId',
                     templateUrl: 'howtos/templates/howto.html',
                     controller: 'HowToCtrl as howToCtrl'
-                })
-                .state('task', {
-                    url: '/howtos/:hottoId/tasks/:taskIndex',
-                    templateUrl: 'tasks/templates/task.html',
-                    controller: 'TaskCtrl as taskCtrl'
                 });
         });
 })();

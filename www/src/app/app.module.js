@@ -31,12 +31,16 @@ angular.module('givesBack', [
             if (toState.name !== 'login' && toState.name !== 'signup') {
                 var auth = $cookieStore.get('authdata');
                 if (!auth || !UserService.user || UserService.user.id !== auth) {
-                    UserService.getUser().then(function () {
-                        $state.go(toState.name);
-                    }, function (err) {
-                        $log.error(err);
+                    if ((!UserService.user || !UserService.user.id) && !auth) {
                         $state.go('login');
-                    });
+                    } else {
+                        UserService.getUser().then(function () {
+                            $state.go(toState.name);
+                        }, function (err) {
+                            $log.error(err);
+                            $state.go('login');
+                        });
+                    }
                     event.preventDefault();
 
                 }
