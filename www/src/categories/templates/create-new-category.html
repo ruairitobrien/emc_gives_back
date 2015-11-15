@@ -1,7 +1,9 @@
 <ion-modal-view>
+
     <ion-header-bar>
         <h1 class="title">Create New Category</h1>
     </ion-header-bar>
+
     <ion-content>
         <form name="createCategoryForm" novalidate="" ng-submit="createNewCategory(category)">
 
@@ -45,7 +47,7 @@
                         ng-disabled="!createCategoryForm.$valid" type="submit">
                     <b>Add Category</b>
                 </button>
-                <ion-spinner class="spinner-energized" ng-if="categoryModalProcessing"></ion-spinner>
+                <ion-spinner class="spinner-balanced" ng-if="categoryModalProcessing"></ion-spinner>
             </div>
         </form>
 

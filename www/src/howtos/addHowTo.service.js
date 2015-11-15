@@ -4,10 +4,10 @@
     angular.module('givesBack.howtos')
         .factory('addHowTo', addHowTo);
 
-    addHowTo.$inject = ['$ionicModal', '$stateParams', '$log', '$ionicPopup', 'HowToService', 'fileUpload', 'dpdConfig'];
+    addHowTo.$inject = ['$ionicModal', '$log', '$ionicPopup', 'HowToService', 'fileUpload', 'dpdConfig'];
 
     /* @ngInject */
-    function addHowTo($ionicModal, $stateParams, $log, $ionicPopup, HowToService, fileUpload, dpdConfig) {
+    function addHowTo($ionicModal, $log, $ionicPopup, HowToService, fileUpload, dpdConfig) {
 
         return {
             setupHowToModal: setupHowToModal,

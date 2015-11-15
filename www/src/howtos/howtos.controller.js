@@ -14,6 +14,7 @@
         '$sce',
         '$ionicActionSheet',
         '$ionicNavBarDelegate',
+        '$state',
         'HowToService',
         'settings',
         'colourPicker',
@@ -27,6 +28,7 @@
                        $sce,
                        $ionicActionSheet,
                        $ionicNavBarDelegate,
+                       $state,
                        HowToService,
                        settings,
                        colourPicker,
@@ -49,6 +51,10 @@
         ////////////////
 
         function activate() {
+            if (!howtoId) {
+                return $state.go('dashboard');
+            }
+
             $scope.howto = {};
             $scope.howto.tasks = [];
             HowToService.getHowToById(howtoId);

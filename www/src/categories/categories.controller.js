@@ -9,6 +9,7 @@
         '$stateParams',
         '$ionicActionSheet',
         '$ionicNavBarDelegate',
+        '$state',
         'HowToService',
         'addHowTo',
         'settings',
@@ -21,6 +22,7 @@
                           $stateParams,
                           $ionicActionSheet,
                           $ionicNavBarDelegate,
+                          $state,
                           HowToService,
                           addHowTo,
                           settings,
@@ -41,6 +43,10 @@
         ////////////////
 
         function activate() {
+
+            if (!categoryId) {
+                return $state.go('dashboard');
+            }
 
             HowToService.getHowToByParent(categoryId);
 

@@ -25,7 +25,7 @@
                 <img ng-src="{{task.image}}"/>
 
                 <audio ng-if="task.audio" preload>
-                    <source ng-src="{{task.audio}}"/>
+                    <source ng-src="{{task.audio | trusted}}"/>
                 </audio>
             </div>
         </span>

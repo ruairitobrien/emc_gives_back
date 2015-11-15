@@ -1,52 +1,70 @@
 <ion-modal-view>
+
+    <ion-header-bar>
+        <h1 class="title">Add Task</h1>
+    </ion-header-bar>
+
     <ion-content>
+        <form name="addTaskForm" novalidate="" ng-submit="addTask(task)">
+            <div class="list">
+                <p style="text-align: center">
+                    Add a task for your how to, tasks are the steps which form the how to
+                    ie. a how to brush your teeth one task would be get your toothbrush</p>
 
-        <div class="tasks">
-            <p style="text-align: center">
-                Add a task for your how to, tasks are the steps which form the how to
-                ie. a how to brush your teeth one task would be get your toothbrush</p>
+                <label class="item item-input">
+                    <label class="modal-input-label">Task Name: </label>
+                    <input name="taskName" type="text" ng-model="task.name" placeholder="Task Name" required>
+                </label>
 
-            <div class="list" ng-show="tasks.length > 0" ng-repeat="t in tasks">
+                <div class="error-container" ng-show="addTaskForm.taskName.$error"
+                     ng-messages="addTaskForm.taskName.$error">
+                    <div class="info" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        Task name is required
+                    </div>
+                </div>
 
-                <a class="item item-thumbnail-left" href="#">
-                    <img ng-src="{{t.image}}">
+                <label class="item item-input">
+                    <label class="modal-input-label">Task Description: </label>
+                    <input name="taskDescription" type="text" ng-model="task.description"
+                           placeholder="Task Description">
+                </label>
 
-                    <h2>{{t.name}}</h2>
+                <label class="item item-input">
+                    <label class="modal-input-label">Task Image: </label>
+                    <input name="taskImage" type="file" placeholder="Image"
+                           id="taskimage" valid-file ng-model="taskImageFileName"
+                           onchange="angular.element(this).scope().setTaskFiles(this)" required accept="image/*">
+                </label>
 
-                    <p>{{t.description}}</p>
-                </a>
+                <div class="error-container last-error-container"
+                     ng-show="addTaskForm.taskImage.$error"
+                     ng-messages="addTaskForm.taskImage.$error">
+                    <div class="info" ng-message="required">
+                        <i class="ion-information-circled"></i>
+                        Task image is required
+                    </div>
+                </div>
 
+                <label class="item item-input">
+                    <label class="modal-input-label">Task Audio: </label>
+                    <input name="taskAudio" type="file" placeholder="Audio"
+                           id="taskAudio"
+                           onchange="angular.element(this).scope().setTaskAudio(this)" accept="audio/*">
+                </label>
+
+
+                <button type="button" class="button button-energized modal-form-button" ng-click="cancelCreateTask()">
+                    Cancel
+                </button>
+
+                <button ng-show="!taskModalProcessing"
+                        class="button icon-right ion-checkmark-round button-balanced modal-form-button"
+                        ng-disabled="!addTaskForm.$valid" type="submit">
+                    <b>Create</b>
+                </button>
+                <ion-spinner class="spinner-balances" ng-if="taskModalProcessing"></ion-spinner>
             </div>
-
-            <label class="item item-input">
-                <label>Task Name: </label>
-                <input type="text" ng-model="task.name" placeholder="Task Name">
-            </label>
-            <label class="item item-input">
-                <label>Task Description: </label>
-                <input type="text" ng-model="task.description" placeholder="Task Description">
-            </label>
-            <label class="item item-input">
-                <label>Task Image: </label>
-                <input type="file" placeholder="Image" id="taskimage"
-                       onchange="angular.element(this).scope().setTaskFiles(this)">
-            </label>
-            <span style="float: right;">
-
-                 <button type="button" class="button button-energized" style="margin-top:20px"
-                         ng-click="cancelCreateTask()">
-                     Cancel
-                 </button>
-
-            <button ng-show="!taskModalProcessing" class="button icon-right ion-checkmark-round button-balanced"
-                    style="margin-top:20px"
-                    ng-click="addTask()">
-                <b>Create</b>
-            </button>
-            <ion-spinner class="spinner-energized" ng-if="taskModalProcessing"></ion-spinner>
-            </span>
-        </div>
-
-
+        </form>
     </ion-content>
 </ion-modal-view>
