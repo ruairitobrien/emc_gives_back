@@ -22,10 +22,12 @@
 
         <ion-spinner class="spinner-energized" ng-if="!categoryCtrl.howtos"></ion-spinner>
 
-        <div class="howtoList">
-            <a ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}" class="cope-tile tile-4">
-                <h2>{{howto.title}}</h2>
-                <img ng-src="{{howto.image}}"/>
+        <div class="row cope-list">
+            <a class="col col-25 cope-col" ng-repeat="howto in categoryCtrl.howtos" href="#/howtos/{{howto.id}}">
+                <div class="cope-tile">
+                    <h2 class="howto-title">{{howto.title}}</h2>
+                    <img ng-src="{{howto.image}}"/>
+                </div>
             </a>
         </div>
 
