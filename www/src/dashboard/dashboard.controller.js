@@ -13,7 +13,7 @@
         'settings',
         'colourPicker',
         'editPin',
-        'categoryEditor',
+        'dashboardEditor',
         'authentication'
     ];
 
@@ -26,7 +26,7 @@
                            settings,
                            colourPicker,
                            editPin,
-                           categoryEditor,
+                           dashboardEditor,
                            authentication) {
         /* jshint validthis: true */
         var vm = this;
@@ -58,7 +58,7 @@
             colourPicker.setupColourPickerModal($scope).then(function (modal) {
                 $scope.colourPickerModal = modal;
             });
-            categoryEditor.setupCategoryEditorModal($scope).then(function (modal) {
+            dashboardEditor.setupDashboardEditorModal($scope).then(function (modal) {
                 $scope.categoryEditorModal = modal;
             });
             editPin.setupEditPinModal($scope).then(function (modal) {

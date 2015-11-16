@@ -20,11 +20,12 @@
         <ion-spinner class="spinner-energized" ng-if="!dashboardCtrl.categories"></ion-spinner>
 
         <div class="row cope-list" ng-if="!!dashboardCtrl.categories && dashboardCtrl.categories.length > 0">
-            <a class="col col-25 cope-col" ng-repeat="category in dashboardCtrl.categories" href="#/categories/{{category.id}}">
-              <div class="cope-tile">
-                  <h3 class="category-title">{{category.title}}</h3>
-                  <img ng-src="{{category.image}}" alt="{{category.title}}"/>
-              </div>
+            <a class="col col-25 cope-col" ng-repeat="category in dashboardCtrl.categories"
+               href="#/categories/{{category.id}}">
+                <div class="cope-tile">
+                    <h3 class="category-title">{{category.title}}</h3>
+                    <img ng-src="{{category.image}}" alt="{{category.title}}"/>
+                </div>
             </a>
         </div>
 

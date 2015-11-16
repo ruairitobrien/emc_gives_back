@@ -1,14 +1,16 @@
 <ion-modal-view>
+
     <ion-header-bar>
         <h1 class="title">Add How-To</h1>
     </ion-header-bar>
+
     <ion-content>
         <form name="addHowtoForm" novalidate="" ng-submit="addHowTo(howto)">
-
             <div class="list">
                 <p style="text-align: center">
                     A How-to is a collection of tasks or steps that describe how to do something, it
                     can be anything,ie. a how to brush your teeth, how to wash your hands etc. </p>
+
                 <label class="item item-input">
                     <label class="modal-input-label">Title: </label>
                     <input name="howtoTitle" type="text" ng-model="howto.title"
@@ -26,7 +28,7 @@
                 <label class="item item-input">
                     <label class="modal-input-label">Cover Image: </label>
                     <input name="howtoImage" type="file" placeholder="Image"
-                           id="howtoimage" valid-file ng-model="howtoImageFIleName"
+                           id="howtoimage" valid-file ng-model="howtoImageFileName"
                            onchange="angular.element(this).scope().setHowToFiles(this)" required accept="image/*"/>
                 </label>
 
@@ -55,8 +57,7 @@
                         ng-disabled="!addHowtoForm.$valid" type="submit">
                     <b>Create</b>
                 </button>
-                <ion-spinner class="spinner-energized" ng-if="howtoModalProcessing"></ion-spinner>
-
+                <ion-spinner class="spinner-balanceds" ng-if="howtoModalProcessing"></ion-spinner>
             </div>
         </form>
     </ion-content>

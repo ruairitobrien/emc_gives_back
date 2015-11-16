@@ -8,7 +8,7 @@
 
     /* @ngInject */
     function addHowTo($ionicModal, $stateParams, $log, $ionicPopup, HowToService, fileUpload, dpdConfig, GoogleService) {
-
+      
         return {
             setupHowToModal: setupHowToModal,
             buttonTemplate: '<i class="icon"></i>Edit'

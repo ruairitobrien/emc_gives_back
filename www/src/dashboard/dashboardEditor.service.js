@@ -2,26 +2,26 @@
     'use strict';
 
     angular.module('givesBack.categories')
-        .factory('categoryEditor', categoryEditor);
+        .factory('dashboardEditor', dashboardEditor);
 
-    categoryEditor.$inject = ['$ionicModal', 'CategoryService', 'newCategory'];
+    dashboardEditor.$inject = ['$ionicModal', 'CategoryService', 'newCategory'];
 
     /* @ngInject */
-    function categoryEditor($ionicModal, CategoryService, newCategory) {
+    function dashboardEditor($ionicModal, CategoryService, newCategory) {
 
         return {
-            setupCategoryEditorModal: setupCategoryEditorModal,
+            setupDashboardEditorModal: setupDashboardEditorModal,
             buttonTemplate: '<i class="icon ion-edit"></i>Edit'
         };
 
-        function setupCategoryEditorModal(scope) {
+        function setupDashboardEditorModal(scope) {
 
             CategoryService.getCategories();
 
-            scope.$watch(function(){
+            scope.$watch(function () {
                 return CategoryService.categories;
-            },function(newVal,oldVal){
-                if(newVal && oldVal !== newVal){
+            }, function (newVal, oldVal) {
+                if (newVal && oldVal !== newVal) {
                     scope.categories = newVal;
                 }
             });
@@ -42,7 +42,7 @@
                 CategoryService.removeCategory(id);
             };
 
-            return $ionicModal.fromTemplateUrl('categories/templates/edit-categories.html', {
+            return $ionicModal.fromTemplateUrl('dashboard/templates/editDashboard.html', {
                 scope: scope,
                 animation: 'slide-in-up'
             });
