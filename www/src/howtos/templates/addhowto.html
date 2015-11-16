@@ -41,7 +41,7 @@
 
                 <label class="item item-input">
                     <label class="modal-input-label">Video Url: </label>
-                    <input type="text" ng-model="howto.video"
+                    <input type="text" ng-model="howto.video" ng-blur="fetchVideoSnippet()"
                            placeholder="The video to embed for your new how-to (currently only YouTube videos are supported)">
                 </label>
 

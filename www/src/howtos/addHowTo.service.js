@@ -4,10 +4,10 @@
     angular.module('givesBack.howtos')
         .factory('addHowTo', addHowTo);
 
-    addHowTo.$inject = ['$ionicModal', '$stateParams', '$log', '$ionicPopup', 'HowToService', 'fileUpload', 'dpdConfig'];
+    addHowTo.$inject = ['$ionicModal', '$stateParams', '$log', '$ionicPopup', 'HowToService', 'fileUpload', 'dpdConfig', 'GoogleService'];
 
     /* @ngInject */
-    function addHowTo($ionicModal, $stateParams, $log, $ionicPopup, HowToService, fileUpload, dpdConfig) {
+    function addHowTo($ionicModal, $stateParams, $log, $ionicPopup, HowToService, fileUpload, dpdConfig, GoogleService) {
 
         return {
             setupHowToModal: setupHowToModal,
@@ -56,6 +56,15 @@
                 scope.howToModal.hide();
             };
 
+            scope.fetchVideoSnippet = function () {
+              GoogleService.googleApiClientReady().then(function (data) {
+                // $scope.snippet = data;
+                console.log(data);
+              }, function (error) {
+                  console.log('Failed: ' + error);
+              });
+            };
+
             function onError(err) {
                 $log.error(err);
                 scope.howtoModalProcessing = false;
@@ -68,7 +77,6 @@
                     scope.howToModal.hide();
                 });
             }
-
 
             return $ionicModal.fromTemplateUrl('howtos/templates/addhowto.html', {
                 scope: scope,
