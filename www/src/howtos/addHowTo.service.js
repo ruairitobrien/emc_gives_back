@@ -8,7 +8,7 @@
 
     /* @ngInject */
     function addHowTo($ionicModal, $stateParams, $log, $ionicPopup, HowToService, fileUpload, dpdConfig, GoogleService) {
-      
+
         return {
             setupHowToModal: setupHowToModal,
             buttonTemplate: '<i class="icon"></i>Edit'
@@ -17,6 +17,7 @@
         function setupHowToModal(scope, categoryId) {
             scope.howto = {};
             scope.howtoModalProcessing = false;
+            // setupYouTubeApiClient();
 
             scope.setHowToFiles = function (element) {
                 scope.howtoImage = element.files[0];
@@ -56,12 +57,12 @@
                 scope.howToModal.hide();
             };
 
-            scope.fetchVideoSnippet = function () {
-              GoogleService.googleApiClientReady().then(function (data) {
+            scope.getYouTubeSnippet = function (videoUrl) {
+              GoogleService.getYouTubeSnippet(videoUrl).then(function (data) {
                 // $scope.snippet = data;
                 console.log(data);
               }, function (error) {
-                  console.log('Failed: ' + error);
+                  console.error('Failed: ' + error);
               });
             };
 
@@ -76,6 +77,10 @@
                 }).then(function () {
                     scope.howToModal.hide();
                 });
+            }
+
+            function setupYouTubeApiClient() {
+              GoogleService.setupYouTubeApiClient();
             }
 
             return $ionicModal.fromTemplateUrl('howtos/templates/addhowto.html', {
