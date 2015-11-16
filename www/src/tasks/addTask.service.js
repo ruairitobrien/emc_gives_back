@@ -46,8 +46,8 @@
 
             };
 
-            scope.cancelCreateHowTo = function () {
-                scope.howto = null;
+            scope.cancelCreateTask = function () {
+                scope.taskModalProcessing = false;
                 scope.taskModal.hide();
             };
 

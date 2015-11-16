@@ -14,7 +14,8 @@
         'addHowTo',
         'settings',
         'colourPicker',
-        'editPin'
+        'editPin',
+        'authentication'
     ];
 
     /* @ngInject */
@@ -27,7 +28,8 @@
                           addHowTo,
                           settings,
                           colourPicker,
-                          editPin) {
+                          editPin,
+                          authentication) {
         /* jshint validthis: true */
         var vm = this;
         var categoryId = $stateParams.categoryId;
@@ -87,6 +89,9 @@
                     },
                     {
                         text: '<i class="icon ion-edit"></i>Edit'
+                    },
+                    {
+                        text: '<i class="icon ion-log-out"></i>Logout'
                     }
                 ],
                 titleText: 'Settings',
@@ -102,6 +107,10 @@
                         $ionicNavBarDelegate.showBackButton(!settings.locked);
                     } else if (index === 2) {
                         openEditor();
+                    } else if (index === 3) {
+                        authentication.logout().finally(function () {
+                            $state.go('login');
+                        });
                     }
                     return true;
                 }

@@ -66,7 +66,7 @@
             }
 
 
-            return $ionicModal.fromTemplateUrl('categories/templates/create-new-category.html', {
+            return $ionicModal.fromTemplateUrl('categories/templates/addCategory.html', {
                 scope: scope,
                 animation: 'slide-in-up'
             });
